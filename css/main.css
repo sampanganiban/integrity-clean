@@ -12,13 +12,18 @@ body {
 }
 
 .welcome {
-  padding:2em;
-  padding-top:4em;
+  padding-top:2em;
+  margin:1em;
 }
 
 .welcome ul li {
   font-size:18px;
   text-align: left;
+  margin:.5em;
+}
+
+#about-aaron p {
+	margin:1.5em;
 }
 
 ul {
