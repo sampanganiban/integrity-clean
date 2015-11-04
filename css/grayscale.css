@@ -161,11 +161,20 @@ a {
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-a:hover,
-a:focus {
-  text-decoration: none;
-  color: #6db220;
+
+#nav-bar-links li a:hover {
+  color:#6db220;
 }
+
+#nav-bar-links li a:active {
+  color:#6db220;
+}
+
+a:hover, a:active {
+    text-decoration: none;
+    color: #00B7FF;
+}
+
 .light {
   font-weight: 400;
 }
@@ -295,22 +304,28 @@ ul.banner-social-buttons {
   #contact-form {
     width:50%;
     float:left;
+    /*border:1px solid #f09;*/
   }
 
   #contact-details {
     width:50%;
     float:left;
+    /*border:1px solid #f09;*/
   }
 
 }
 
-@media (min-width:1024px) {
+@media (min-width:1200px) {
+  #contact-form {
+    width:585px;
+    float:left;
+  }
 
-  #contact-form input, #contact-form textarea {
-    width:490px;
+  #contact-details {
+    width:585px;
+    float:left;
   }
 }
-
 
 
 @media (min-width: 1160px) {
