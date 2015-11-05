@@ -1,9 +1,29 @@
 body {
   width: 100%;
   height: 100%;
-  font-family: 'Lora', serif;
+  font-family: avenir next, serif;
   color: #333;
 }
+
+#book-quote {
+  height:50px;
+  width:50%;
+  background-color: #00aae3;
+  float:left;
+}
+
+#contact-number {
+  height:50px;
+  width:50%;
+  background-color: #6db220;
+  float:left;
+}
+
+#contact-number p, #book-quote p {
+  font-size:15px;
+  line-height:50px;
+}
+
 html {
   width: 100%;
   height: 100%;
@@ -259,6 +279,11 @@ ul.banner-social-buttons {
 }
 
 @media (min-width: 768px) {
+  
+  #book-quote, #contact-number {
+    display:none;
+  }
+
   p {
     /*margin: 0 0 35px;*/
     font-size: 20px;
@@ -274,6 +299,14 @@ ul.banner-social-buttons {
     -moz-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
     transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
   }
+  
+  #nav-bar-links li a {
+    /*border:1px solid #f09;*/
+    margin-left:-5px;
+    margin-right:-5px;
+    text-align: center;
+  }
+
   .navbar-custom.top-nav-collapse {
     padding: 0;
     background-color: #222;
