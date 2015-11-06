@@ -1,147 +1,128 @@
-// Google Maps Scripts
-// When the window has finished loading create our google map below
-google.maps.event.addDomListener(window, 'load', init);
+window.onload = function () {
 
-function init() {
-    // Basic options for a simple Google Map
-    // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-    var mapOptions = {
-        // How zoomed in you want the map to start at (always required)
-        zoom: 15,
+  cleaningLocation();
 
-        // The latitude and longitude to center the map (always required)
-        center: new google.maps.LatLng(40.6700, -73.9400), // New York
+  // userLocation();
 
-        // Disables the default Google Maps UI components
-        disableDefaultUI: true,
-        scrollwheel: false,
-        draggable: false,
+  // initialize();
 
-        // How you would like to style the map. 
-        // This is where you would paste any style found on Snazzy Maps.
-        styles: [{
-            "featureType": "water",
-            "elementType": "geometry",
-            "stylers": [{
-                "color": "#000000"
-            }, {
-                "lightness": 17
-            }]
-        }, {
-            "featureType": "landscape",
-            "elementType": "geometry",
-            "stylers": [{
-                "color": "#000000"
-            }, {
-                "lightness": 20
-            }]
-        }, {
-            "featureType": "road.highway",
-            "elementType": "geometry.fill",
-            "stylers": [{
-                "color": "#000000"
-            }, {
-                "lightness": 17
-            }]
-        }, {
-            "featureType": "road.highway",
-            "elementType": "geometry.stroke",
-            "stylers": [{
-                "color": "#000000"
-            }, {
-                "lightness": 29
-            }, {
-                "weight": 0.2
-            }]
-        }, {
-            "featureType": "road.arterial",
-            "elementType": "geometry",
-            "stylers": [{
-                "color": "#000000"
-            }, {
-                "lightness": 18
-            }]
-        }, {
-            "featureType": "road.local",
-            "elementType": "geometry",
-            "stylers": [{
-                "color": "#000000"
-            }, {
-                "lightness": 16
-            }]
-        }, {
-            "featureType": "poi",
-            "elementType": "geometry",
-            "stylers": [{
-                "color": "#000000"
-            }, {
-                "lightness": 21
-            }]
-        }, {
-            "elementType": "labels.text.stroke",
-            "stylers": [{
-                "visibility": "on"
-            }, {
-                "color": "#000000"
-            }, {
-                "lightness": 16
-            }]
-        }, {
-            "elementType": "labels.text.fill",
-            "stylers": [{
-                "saturation": 36
-            }, {
-                "color": "#000000"
-            }, {
-                "lightness": 40
-            }]
-        }, {
-            "elementType": "labels.icon",
-            "stylers": [{
-                "visibility": "off"
-            }]
-        }, {
-            "featureType": "transit",
-            "elementType": "geometry",
-            "stylers": [{
-                "color": "#000000"
-            }, {
-                "lightness": 19
-            }]
-        }, {
-            "featureType": "administrative",
-            "elementType": "geometry.fill",
-            "stylers": [{
-                "color": "#000000"
-            }, {
-                "lightness": 20
-            }]
-        }, {
-            "featureType": "administrative",
-            "elementType": "geometry.stroke",
-            "stylers": [{
-                "color": "#000000"
-            }, {
-                "lightness": 17
-            }, {
-                "weight": 1.2
-            }]
-        }]
-    };
-
-    // Get the HTML DOM element that will contain your map 
-    // We are using a div with id="map" seen below in the <body>
-    var mapElement = document.getElementById('map');
-
-    // Create the Google Map using out element and options defined above
-    var map = new google.maps.Map(mapElement, mapOptions);
-
-    // Custom Map Marker Icon - Customize the map-marker.png file to customize your icon
-    var image = 'img/map-marker.png';
-    var myLatLng = new google.maps.LatLng(40.6700, -73.9400);
-    var beachMarker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        icon: image
-    });
 }
+
+var directionsDisplay;
+var directionsService = new google.maps.DirectionsService();
+var map;
+var hereIsTheUser;
+var hereIsTheCafe;
+
+function cleaningLocation() {
+
+  // Find the map container
+  var mapContainer = document.getElementById('cleaning-location');
+
+  // Store the info about the cafe in a JS object
+  var cleaning = {
+
+    title:"Cleaning Locations",
+    lat:-41.288799, 
+    lng:174.777213,
+    icon: ''
+   
+  
+  }
+
+  // Give the lat and lng to google so it can center on that info
+  var centerPoint = new google.maps.LatLng(cafe.lat, cafe.lng);
+
+  // Save the location of the cafe
+  hereIsTheCafe = centerPoint;
+
+  var mapOptions = {
+
+    center:centerPoint,
+    zoom:17,
+    scrollwheel: false,
+    mapTypeControl:false,
+    streetViewControl:false
+  }
+
+  // Show the map
+  map = new google.maps.Map(mapContainer, mapOptions);
+
+  var iconBase = 'img/cleaning-location-marker.png';
+  var cleaningMarker = new google.maps.Marker({
+
+    position:centerPoint,
+    map:map,
+    icon:iconBase,
+    title:cafe.title
+
+  });
+
+}
+
+function userLocation() {
+
+  if (navigator.geolocation) {
+
+    navigator.geolocation.getCurrentPosition(function(userLocation) {
+
+    console.log(userLocation);
+
+    var latLng = new google.maps.LatLng (userLocation.coords.latitude, userLocation.coords.longitude);
+
+    // Save the location of the user
+    hereIsTheUser = latLng;
+
+    var userMarker = new google.maps.Marker ({
+      position:latLng,
+      map: map,
+      icon: 'img/cleaning-location-marker.png'
+    });
+
+    userMarker.setAnimation(google.maps.Animation.DROP);
+
+    map.panTo(latLng);
+
+     calcRoute();
+
+    });
+
+  }
+
+}
+
+function initialize() {
+ directionsDisplay = new google.maps.DirectionsRenderer();
+ directionsDisplay.setMap(map);
+}
+
+
+
+function calcRoute() {
+  var request = {
+      origin: hereIsTheUser,
+      destination: hereIsTheCafe,
+      travelMode: google.maps.TravelMode.WALKING
+  };
+  directionsService.route(request, function(response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);
+    }
+  });
+}
+
+
+// CODE TO REMOVE THE DEFAULT ROUTE MARKERS
+// https://developers.google.com/maps/documentation/javascript/reference#DirectionsRendererOptions
+
+
+
+
+
+
+
+
+
+
+
+

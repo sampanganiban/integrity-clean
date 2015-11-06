@@ -148,16 +148,17 @@ h6 {
   width: 100%;
   padding: 100px 0;
   color: white;
-  background: url(../img/download2.jpg) no-repeat center center scroll;
+  background: url(../img/wellington-lookout.jpg) no-repeat center center scroll;
   /*background-color: rgba(132,176,53,.8);*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
 }
-#map {
+#cleaning-location {
   width: 100%;
   height: 200px;
+  border:1px solid #f09;
 }
 
 #contact-details h3 {
