@@ -2,9 +2,9 @@ window.onload = function () {
 
   cleaningLocation();
 
-  // userLocation();
+  userLocation();
 
-  // initialize();
+  initialize();
 
 }
 
@@ -19,7 +19,7 @@ function cleaningLocation() {
   // Find the map container
   var mapContainer = document.getElementById('cleaning-location');
 
-  // Store the info about the cafe in a JS object
+  // Store the info about the Cleaning Locations in a JS object
   var cleaning = {
 
     title:"Cleaning Locations",
@@ -31,7 +31,7 @@ function cleaningLocation() {
   }
 
   // Give the lat and lng to google so it can center on that info
-  var centerPoint = new google.maps.LatLng(cafe.lat, cafe.lng);
+  var centerPoint = new google.maps.LatLng(cleaning.lat, cleaning.lng);
 
   // Save the location of the cafe
   hereIsTheCafe = centerPoint;
@@ -48,7 +48,7 @@ function cleaningLocation() {
   // Show the map
   map = new google.maps.Map(mapContainer, mapOptions);
 
-  var iconBase = 'img/cleaning-location-marker.png';
+  var iconBase = 'img/map-marker.png';
   var cleaningMarker = new google.maps.Marker({
 
     position:centerPoint,
@@ -76,7 +76,7 @@ function userLocation() {
     var userMarker = new google.maps.Marker ({
       position:latLng,
       map: map,
-      icon: 'img/cleaning-location-marker.png'
+      icon: 'img/map-marker.png'
     });
 
     userMarker.setAnimation(google.maps.Animation.DROP);
