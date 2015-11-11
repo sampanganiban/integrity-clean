@@ -162,6 +162,14 @@ h6 {
   border:1px solid #f09;
 }
 
+#quote-form .form-group {
+  padding:.2em;
+}
+
+#quote-image {
+  margin-bottom:1em;
+}
+
 #contact-details h3 {
   text-align: center;
 }
@@ -280,6 +288,20 @@ ul.banner-social-buttons {
   margin-top: 0;
 }
 
+.navbar-shrink {
+  padding:10px 0px;
+  background-color: #333;
+}
+
+@media (min-width: 480px) {
+
+  #quote-image, #quote-form {
+    width:50%;
+    float:left;
+  }
+
+}
+
 @media (min-width: 768px) {
   
   #book-quote, #contact-number {
@@ -360,6 +382,11 @@ ul.banner-social-buttons {
     width:585px;
     float:left;
   }
+
+  #quote-form {
+    width:450px;
+  }
+
 }
 
 

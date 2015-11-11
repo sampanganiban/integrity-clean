@@ -45,12 +45,12 @@ switch($_GET['page']) {
 	break;
 
 	// Quick Quote page
-	// case 'services':
-	// 	require 'classes/models/QuoteModel.php'; 
-	// 	require 'classes/views/QuotePage.php';
-	// 	$model = new QuoteModel();
-	// 	$page = new QuotePage($model);
-	// break;
+	case 'quote':
+		require 'classes/models/QuoteModel.php'; 
+		require 'classes/views/QuotePage.php';
+		$model = new QuoteModel();
+		$page = new QuotePage($model);
+	break;
 
 	// Testimonials page
 	case 'testimonials' :

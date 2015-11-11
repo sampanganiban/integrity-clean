@@ -6,10 +6,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content="<?php echo $this->model->description; ?>">
     <meta name="author" content="">
-
-    <title></title>
+ 
+    <title><?php echo $this->model->title; ?></title>
 
     <link href="css/main.css" rel="stylesheet" >
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -24,20 +24,25 @@
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <![endif] navbar-shrink-->
 
 </head>
 
 <body data-target=".navbar-fixed-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-custom navbar-fixed-top 
+    <?php
+        // Display the changing nav bar when the page is not the homepage
+        if( $_GET['page'] == 'home' ) : ?> top-nav-collpase
+    <?php endif; ?>" role="navigation">
+
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="index.php?page=home">
                     <span class="light">Integrity</span> Clean
                 </a>
             </div>
@@ -46,19 +51,19 @@
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                 <ul class="nav navbar-nav" id="nav-bar-links">
                     <li>
-                        <a href="about.html">About Us</a>
+                        <a href="index.php?page=about">About Us</a>
                     </li>
                     <li>
-                        <a href="services.html">Our Services</a>
+                        <a href="index.php?page=services">Our Services</a>
                     </li>
                     <li>
-                        <a href="quote.html">Quick Quote</a>
+                        <a href="index.php?page=quote">Quick Quote</a>
                     </li>
                     <li>
-                        <a href="testimonials.html">Testimonials</a>
+                        <a href="index.php?page=testimonials">Testimonials</a>
                     </li>
                     <li>
-                        <a href="contact.html">Contact Us</a>
+                        <a href="index.php?page=contact">Contact Us</a>
                     </li>
                 </ul>
             </div>
@@ -66,18 +71,24 @@
     </nav>
 
     <!-- Intro Header -->
-    <header class="intro">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <img src="./img/logo/desktop-logo.png" alt="">
-                        <h1 id="intro-text">Our Name, Our Policy</h1>
-                        <img src="./img/logo/logo-no-text.png" alt="">
+    <?php
+        if($_GET['page'] == 'home' ) : ?>
+            <header class="intro">
+                <div class="intro-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2">
+                                <img src="./img/logo/desktop-logo.png" alt="">
+                                <h1 id="intro-text">Our Name, Our Policy</h1>
+                                <img src="./img/logo/logo-no-text.png" alt="">
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </header>
+            </header>;
+        <?php endif;
+    ?>        
 
     <main class="clearfix">
+
+

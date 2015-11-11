@@ -5,13 +5,13 @@
             <div class="footer-container">
                 <div class="footer-div">
                     <div class="col-lg-3">
-                        <h3>Have a look through <em>Integrity Clean</em></h3>
+                        <h3>Find your way through <em>Integrity Clean</em></h3>
                         <ul class="footer-nav">
-                            <li><a href="#">about us</a></li>
-                            <li><a href="#">our services</a></li>
-                            <li><a href="#">quick quote</a></li>
-                            <li><a href="#">testimonials</a></li>
-                            <li><a href="#">contact us</a></li>
+                            <li><a href="index.php?page=about">about us</a></li>
+                            <li><a href="index.php?page=services">our services</a></li>
+                            <li><a href="index.php?page=quote">quick quote</a></li>
+                            <li><a href="index.php?page=testimonials">testimonials</a></li>
+                            <li><a href="index.php?page=contact">contact us</a></li>
                         </ul>
                     </div>    
                 </div>
