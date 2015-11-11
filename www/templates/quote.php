@@ -1,5 +1,5 @@
 <!-- Welcome Section -->
-    <section class="welcome text-center container">
+    <section id="welcome" class="welcome text-center container">
         <div id="get-quote-form" class="row">
         <h1>Get a Quote</h1>
         <p>Enter your details first before you get your quote</p>

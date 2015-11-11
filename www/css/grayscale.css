@@ -24,6 +24,11 @@ body {
   line-height:50px;
 }
 
+/* Styles that affect all the main content */
+main {
+  margin-bottom:3em;
+}
+
 html {
   width: 100%;
   height: 100%;
@@ -322,6 +327,10 @@ ul.banner-social-buttons {
     -webkit-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
     -moz-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
     transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+  }
+
+  .other-page-navbar {
+    background-color:#222;
   }
   
   #nav-bar-links li a {

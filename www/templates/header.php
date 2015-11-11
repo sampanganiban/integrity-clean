@@ -33,8 +33,8 @@
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top 
     <?php
-        // Display the changing nav bar when the page is not the homepage
-        if( $_GET['page'] == 'home' ) : ?> top-nav-collpase
+        // Display the nav bar when the page is not the homepage
+        if( $_GET['page'] != 'home' ) : ?> other-page-navbar
     <?php endif; ?>" role="navigation">
 
         <div class="container">

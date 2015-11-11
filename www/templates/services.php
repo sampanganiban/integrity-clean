@@ -1,5 +1,5 @@
 <!-- Welcome Section -->
-    <section class="welcome" class="text-center">
+    <section id="welcome" class="welcome" class="text-center">
         <div class="col-lg-8 col-lg-offset-2">
             <div class="row">
                 <h1>Our Services</h1>

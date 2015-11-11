@@ -50,8 +50,14 @@
     <!-- Google Map -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
 
-    <!-- Custom JS -->
-    <script src="js/grayscale.js"></script>
+    <?php
+
+        // If the requested page is the home the header will animate if not then the animated header will turn off and just display the nav bar
+        if($_GET['page'] == 'home') : ?>
+            <script src="js/grayscale.js"></script>
+        <?php endif;
+
+    ?>
 
 </body>
 

@@ -16,6 +16,11 @@ body {
   margin:1em;
 }
 
+/* Styles specially for the other pages */
+#welcome {
+	margin-top:8em;
+}
+
 .welcome ul li {
   font-size:18px;
   text-align: left;

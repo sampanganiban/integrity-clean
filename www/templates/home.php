@@ -57,8 +57,8 @@
         <div class="row">
              <div class="col-lg-8 col-lg-offset-2">
                 <h1>WHAT MAKES US DIFFERENT?</h1>
-                <hr>
                 <p id="different-paragraph">At Integrity Clean it's the simple things that make a big difference</p>
+                <hr>
                 <ul>
                     <li>You only deal with one person.</li>
                     <li>We customize each cleaning schedule to suit the requirements of our clients.</li>
