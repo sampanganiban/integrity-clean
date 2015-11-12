@@ -52,6 +52,22 @@ switch($_GET['page']) {
 		$page = new QuotePage($model);
 	break;
 
+	// Register page
+	case 'register':
+		require 'classes/models/RegisterModel.php';
+		require 'classes/views/RegisterPage.php';
+		$model = new RegisterModel();
+		$page = new RegisterPage($model);
+	break;
+
+	// Account page
+	case 'account':
+		require 'classes/models/AccountModel.php';
+		require 'classes/views/AccountPage.php';
+		$model = new AccountModel();
+		$page = new AccountPage($model);
+	break;
+
 	// Testimonials page
 	case 'testimonials' :
 		require 'classes/models/TestimonialsModel.php';
@@ -66,6 +82,13 @@ switch($_GET['page']) {
 		require 'classes/views/ContactPage.php';
 		$model = new ContactModel();
 		$page = new ContactPage($model);
+	break;
+
+	default:
+		require 'classes/models/Error404Model.php';
+		require 'classes/views/Error404Page.php';
+		$model = new Error404Model();
+		$page = new Error404Page( $model );
 	break;
 
 }

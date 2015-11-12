@@ -31,13 +31,13 @@ class Page {
 	}
 
 	// Function to display alert messages
-	// public function bootstrapAlert( $message, $type ) {
-	// 	if( $message == '' ) { return; }
+	public function bootstrapAlert( $message, $type ) {
+		if( $message == '' ) { return; }
 
-	// 	echo '<div class="alert alert-'.$type.'">';
-	// 	echo $message;
-	// 	echo '</div>';
-	// }
+		echo '<div class="alert alert-'.$type.'">';
+		echo $message;
+		echo '</div>';
+	}
 
 
 }

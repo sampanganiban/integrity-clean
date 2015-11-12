@@ -25,20 +25,31 @@
                         </div>
                     </div>
                 </div>
-                <div class="footer-div">
-                    <div class="col-lg-3">
-                    <h3>Login to your account</h3>
-                        <form action="" method="">
-                            <div class="form-group">
-                                <input type="text" name="username" id="username" placeholder="username">
+                <?php
+
+                    // Display the users username if they are logged it, if not then just display account
+                    if( isset($_SESSION['username']) ) : ?>
+                      <h4><a href="index.php?page=account"><?php echo $_SESSION['username']; ?></a></h5>
+                      <h4><a href="index.php?page=logout">LOGOUT</a></h5>
+                    <?php else : ?>
+                        <div class="footer-div-with-form">
+                            <div class="col-lg-3">
+                                <h3><a href="index.php?page=register">REGISTER AN ACCOUNT</a></h3>
+                                <h3>OR</h3>
+                                <h3>Login to your account</h3>
+                                <form action="" method="">
+                                    <div class="form-group">
+                                        <input type="text" name="username" id="username" placeholder="username">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password" id="password" placeholder="password">
+                                    </div>
+                                    <input type="submit" value="Login" name="login" id="login" class="btn">
+                                </form>
                             </div>
-                            <div class="form-group">
-                                <input type="password" name="password" id="password" placeholder="password">
-                            </div>
-                            <input type="submit" value="Login" name="login" id="login" class="btn">
-                        </form>
-                    </div>
-                </div>    
+                        </div>
+                    <?php endif;
+                ?>
             </div>
         </div>
     </footer>

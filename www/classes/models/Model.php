@@ -36,7 +36,7 @@ class Model {
 	}
 
 	// Filter the inputs and values
-	// protected function filter( $value ) {
-	// 	return $this->dbc->real_escape_string( $value );
-	// }
+	protected function filter( $value ) {
+		return $this->dbc->real_escape_string( $value );
+	}
 }

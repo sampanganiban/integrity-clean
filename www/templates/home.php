@@ -28,7 +28,7 @@
                         </span>
                         <h3 class="service-heading">LEARN ABOUT US</h3>
                         <p>Integrity Clean is a professional commercial cleaning business.. </p>
-                        <a href="about.html" class="quick-links" class="btn btn-primary">Learn more</a>
+                        <a href="index.php?page=about" class="quick-links" class="btn btn-primary">Learn more</a>
                     </div>
 
                     <div class="col-md-4">
@@ -37,7 +37,7 @@
                         </span>
                         <h3 class="service-heading">OUR SERVICES</h3>
                         <p>We do all forms of commercial cleaning.. </p>
-                        <a href="services.html" class="quick-links" class="btn btn-primary">Learn more</a>
+                        <a href="index.php?page=services"  class="quick-links" class="btn btn-primary">Learn more</a>
                     </div>
 
                     <div class="col-md-4">
@@ -46,7 +46,7 @@
                         </span>
                         <h3 class="service-heading">GET IN TOUCH WITH US</h3>
                         <p>Send us a message, we'd love to hear from you.. </p>
-                        <a href="contact.html" class="quick-links" class="btn btn-primary">Learn more</a>
+                        <a href="index.php?page=contact" class="quick-links" class="btn btn-primary">Learn more</a>
                     </div>
                 </div>
             </div>
