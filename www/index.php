@@ -52,6 +52,14 @@ switch($_GET['page']) {
 		$page = new QuotePage($model);
 	break;
 
+	// Main quote page
+	case 'main-quote':
+		require 'classes/models/MainQuoteModel.php';
+		require 'classes/views/MainQuotePage.php';
+		$model = new MainQuoteModel();
+		$page = new MainQuotePage($model);
+	break;
+
 	// Register page
 	case 'register':
 		require 'classes/models/RegisterModel.php';
@@ -82,6 +90,13 @@ switch($_GET['page']) {
 		require 'classes/views/ContactPage.php';
 		$model = new ContactModel();
 		$page = new ContactPage($model);
+	break;
+
+	case 'logout':
+		require 'classes/models/LogoutModel.php';
+		require 'classes/views/LogoutPage.php';
+		$model = new LogoutModel();
+		$page = new LogoutPage($model);
 	break;
 
 	default:

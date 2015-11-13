@@ -24,6 +24,10 @@ body {
   line-height:50px;
 }
 
+input {
+  color:#444;
+}
+
 /* Styles that affect all the main content */
 main {
   margin-bottom:3em;
