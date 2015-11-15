@@ -1,7 +1,7 @@
    <!-- Welcome Section -->
     <section id="welcome" class="welcome text-center container">
         <div class="row">
-        <h1>Contact Us</h1>
+        <h1> <img src="./img/logo/logo-no-text.png" alt=""> Contact Us</h1>
         <hr>
             <div class="col-lg-4" id="contact-section">
                 <form id="contact-form" method="post" action="index.php?page=contact" novalidate >

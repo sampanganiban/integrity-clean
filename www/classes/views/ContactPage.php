@@ -1,5 +1,7 @@
 <?php
 
+use Mailgun\Mailgun;
+
 class ContactPage extends Page {
 
 	// Properties
@@ -14,6 +16,8 @@ class ContactPage extends Page {
 	private $contactMessageError;
 	private $contactSuccess;
 	private $contactFail;
+
+	// private $contactMessage = [];
 
 	// Methods
 	public function __construct($model) {
@@ -63,27 +67,47 @@ class ContactPage extends Page {
 		}
 
 		// If the message is valid
-		if( strlen($this->message) < 50 ) {
-			$this->contactMessageError = 'Sorry your message is too short';
+		if( strlen($this->message) < 10 ) {
+			$this->contactMessageError = 'Sorry your message is too short, your message should be at least 10 characters';
 			$this->totalErrors++;
 		} elseif( strlen($this->message) > 2000 ) {
-			$this->contactMessageError = 'Sorry, your message is too long';
+			$this->contactMessageError = 'Sorry, your message is too long, can not be longer than 200 characters';
 			$this->totalErrors++;
 		}
 
 
 		// If there are no errors, then continue to place their order into the database
-		// if( $this->totalErrors == 0 ) { 
-		// 	$result = $this->model->sendEnquiry();
+		if( $this->totalErrors == 0 ) { 
+			// $result = $this->model->sendEnquiry();
 
-		// 	// If result is good then tell the user if their order was successful or not
-		// 	if( $result ) {
-		// 		$this->contactSuccess = 'Thank you for sending your message, we will try our best to get back to you.';
-		// 	} else {
-		// 		$this->contactFail = 'Sorry, something went wrong when sending your message, please try in a few minutes.';
-		// 	}
+			# Instantiate the client.
+			$mgClient = new Mailgun('key-a5d6c43600911540c7ff4033f03e4f38');
+			$domain = "sandboxfcac969b25074c6f969079a248e252c4.mailgun.org";
 
-		// }
+			// Send to user
+			$result = $mgClient->sendMessage($domain, array(
+			    'from'    => 'Integrity Clean <mailgun@sandboxfcac969b25074c6f969079a248e252c4.mailgun.org>',
+			    'to'      => '<' . $this->email . '>',
+			    'subject' => 'Thank you for sending your enquiry to Integrity Clean',
+			    'text'    =>  $this->message
+			));
+
+			// Send to admin
+			$result = $mgClient->sendMessage($domain, array(
+			    'from'    => 'Integrity Clean <mailgun@sandboxfcac969b25074c6f969079a248e252c4.mailgun.org>',
+			    'to'      => '<samanthaisabelle.panganiban@gmail.com>',
+			    'subject' => 'Customer Enquiry',
+			    'text'    =>  $this->message
+			));
+
+			// If result is good then tell the user if their order was successful or not
+			if( $result ) {
+				$this->contactSuccess = 'Thank you for sending your message, we will try our best to get back to you.';
+			} else {
+				$this->contactFail = 'Sorry, something went wrong when sending your message, please try in a few minutes.';
+			}
+
+		}
 
 	}
 

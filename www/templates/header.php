@@ -57,7 +57,7 @@
                         <a href="index.php?page=services">Our Services</a>
                     </li>
                     <li>
-                        <a href="index.php?page=quote">Quick Quote</a>
+                        <a href="index.php?page=quote">Quick Online Quote</a>
                     </li>
                     <li>
                         <a href="index.php?page=testimonials">Testimonials</a>
@@ -80,6 +80,7 @@
                             <div class="col-md-8 col-md-offset-2">
                                 <img src="./img/logo/desktop-logo.png" alt="">
                                 <h1 id="intro-text">Our Name, Our Policy</h1>
+                                <!-- Make logo bigger -->
                                 <img src="./img/logo/logo-no-text.png" alt="">
                             </div>
                         </div>

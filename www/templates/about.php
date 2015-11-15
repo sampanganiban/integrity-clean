@@ -2,7 +2,7 @@
     <section id="welcome" class="welcome" class="text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h1>A FEW WORDS ABOUT US</h1>
+                <h1><img src="./img/logo/logo-no-text.png" alt=""> A FEW WORDS ABOUT US</h1>
                 <hr>
                 <p>Integrity Clean does professional commercial cleaning in Wellington. The business was started in 1991. Aaron takes care of the Wellington work. We clean small offices right through to large manufacturing companies.
                 </p>
@@ -22,7 +22,7 @@
     <section id="about-aaron" class="text-center">
         <div class="row">
             <div class="col-lg-4 col-lg-offset-2">
-                <h2>About Aaron</h2>
+                <h2><img src="./img/logo/logo-no-text.png" alt=""> About Aaron</h2>
                 <hr>
                 <p>Aaron started Integrity Clean as a form of part time employment, to enable him to be more involved in study and other pursuits. He soon became aware that there was a real need for honest commercial cleaners, who could use their initiative and consistently leave buildings clean and tidy. Aaron soon employed some of his family then eventually other staff.
                 </p>
