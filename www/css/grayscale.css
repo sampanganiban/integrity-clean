@@ -1,7 +1,7 @@
 body {
   width: 100%;
   height: 100%;
-  font-family: avenir next, serif;
+  font-family: avenir next, sans-serif;
   color: #333;
 }
 
@@ -22,6 +22,18 @@ body {
 #contact-number p, #book-quote p {
   font-size:15px;
   line-height:50px;
+}
+
+#main-quote-form .checkbox, #main-quote-form .radio,  #main-quote-form .form-group {
+  text-align:left;
+}
+
+#main-quote-form .input-group, #main-quote-form .input-group-addon {
+  display:inline;
+}
+
+#dishes h4, #dishes h3, #bathroom-area h4 {
+  margin-bottom:5px;
 }
 
 input {
@@ -55,8 +67,7 @@ h5,
 h6 {
   margin: 0 0 35px;
   text-transform: uppercase;
-  font-family: 'Passion One', cursive;
-  /*font-weight: 200;*/
+  font-family: 'Passion One', serif;
   letter-spacing: 1px;
   text-align:center;
 }
@@ -187,6 +198,18 @@ h6 {
   margin-bottom:2em;
 }
 
+#main-quote-form .form-div label {
+  text-align: left;
+}
+
+#main-quote-form .form-div {
+  margin:1em;
+}
+
+#main-quote-form #spring-clean {
+  height:400px;
+}
+
 p {
   /*margin: 0 0 25px;*/
   font-size: 18px;
@@ -312,9 +335,23 @@ ul.banner-social-buttons {
 }
 
 @media (min-width: 768px) {
+
+  #main-quote-form .form-div {
+    width:310px;
+    height:330px;
+    float:left;
+  }
+
+  #main-quote-form .form-div h3 {
+    text-align:left;
+  }
   
   #book-quote, #contact-number {
     display:none;
+  }
+
+  #welcome {
+    margin-top:10em;
   }
 
   p {
@@ -386,6 +423,14 @@ ul.banner-social-buttons {
 }
 
 @media (min-width:1200px) {
+
+  #main-quote-form .form-div {
+    width:500px;
+    height:270px;
+    float:left;
+    margin:2em;
+  }
+
   #contact-form {
     width:585px;
     float:left;
@@ -398,6 +443,10 @@ ul.banner-social-buttons {
 
   #quote-form {
     width:450px;
+  }
+
+  #welcome {
+    margin-top:8em;
   }
 
 }
