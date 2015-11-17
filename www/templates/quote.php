@@ -13,15 +13,15 @@
                 <h4>To enter the online quotation page, enter your details below</h4>
                 <form id="quote-form" method="post" action="index.php?page=quote" novalidate>                
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Name" name="name">
+                        <input type="text" class="form-control" placeholder="Your Name" value="<?php echo $this->name; ?>" name="name">
                         <?php $this->bootstrapAlert($this->nameError, 'danger') ?>
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Your Email" name="email">
+                        <input type="email" class="form-control" placeholder="Your Email" value="<?php echo $this->email; ?>" name="email">
                         <?php $this->bootstrapAlert($this->emailError, 'danger') ?>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Company" name="company">
+                        <input type="text" class="form-control" placeholder="Your Company" value="<?php echo $this->company; ?>" name="company">
                         <?php $this->bootstrapAlert($this->companyError, 'danger') ?>
                     </div>
                     <input type="submit" class="btn" name="get-quote" id="get-quote" value="Enter Quote Page">   

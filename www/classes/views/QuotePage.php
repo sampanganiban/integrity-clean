@@ -70,7 +70,7 @@ class QuotePage extends Page {
 		} elseif( strlen($this->company) > 20 ) {
 			$this->companyError = 'Your company must not be longer than 20 characters';
 			$this->totalErrors++;
-		} elseif( !preg_match('/^[a-zA-Z \-]{2,20}$/', $this->company) ) {
+		} elseif( !preg_match('/^[a-zA-Z \-.]{2,20}$/', $this->company) ) {
 			$this->companyError = 'Your company must only consist of letters in the alphabet, spaces and hyphens';
 			$this->totalErrors++;
 		}
@@ -78,18 +78,15 @@ class QuotePage extends Page {
 		
 
 		// If there are no errors, then continue to place their order into the database
-		if( $this->totalErrors == 0 ) { 
-			$result = $this->model->placeQuote();
+		if( $this->totalErrors == 0 ) {
+			$result = $this->model->getQuote();
 
 			// If result is good then tell the user if their order was successful or not
 			if( $result ) {
-				
 				// Redirect the user
 				header('Location: index.php?page=main-quote');
-
-				// $this->placeOrderSuccess = 'Thank you for placing an order with Mrs Molly Baking!';
 			} else {
-				// $this->placeOrderFail = 'Sorry, something went wrong when placing your order, please try in a few minutes.';
+				die('Error inserting the quote into the database');
 			}
 
 		}

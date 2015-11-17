@@ -3,7 +3,7 @@
 class QuoteModel extends Model {
 
 	// Function that will enter the personal details of a customer to fill out the quote form
-	public function placeQuote() {
+	public function getQuote() {
 
 		// Filter the data
 		$name    = $this->filter($_POST['name']);
@@ -18,7 +18,8 @@ class QuoteModel extends Model {
 
 		// If the query failed
 		if( $this->dbc->affected_rows == 1 ) {
-			return true;
+			$_SESSION['quoteID'] = $this->dbc->insert_id;
+			return $_SESSION['quoteID'];
 		}	
 
 		return false;

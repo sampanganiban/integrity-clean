@@ -8,50 +8,49 @@
 	        <form action="index.php?page=main-quote" method="post" id="main-quote-form" class="clearfix">
         		<div id="facility-details" class="form-div">
 	        		<h3>Facility Details and Staff:</h3>
-	        		<div class="radio" value="">
+	        		<div class="radio">
 	        			<label>
-	        				<input type="radio" name="staff-number" value="">
+	        				<input type="radio" name="staff-number">
 	        				1-5
 	        			</label>
 	        		</div>
-	        		<div class="radio" value="">
+	        		<div class="radio">
 	        			<label>
-	        				<input type="radio" name="staff-number" value="">
+	        				<input type="radio" name="staff-number">
 	        				5-15
 	        			</label>
 	        		</div>
-	        		<div class="radio" value="">
+	        		<div class="radio">
 	        			<label>
-	        				<input type="radio" name="staff-number" value="">
+	        				<input type="radio" name="staff-number">
 	        				15-30
 	        			</label>
 	        		</div>
-	        		<div class="radio" value="">
+	        		<div class="radio">
 	        			<label>
-	        				<input type="radio" name="staff-number" value="">
+	        				<input type="radio" name="staff-number">
 	        				30-50
 	        			</label>
 	        		</div>
-	        		<div class="radio" value="">
+	        		<div class="radio">
 	        			<label>
-	        				<input type="radio" name="staff-number" value="">
+	        				<input type="radio" name="staff-number">
 	        				50-100
 	        			</label>
 	        		</div>
-	        		<div class="radio" value="">
+	        		<div class="radio">
 	        			<label>
-	        				<input type="radio" name="staff-number" value="">
+	        				<input type="radio" name="staff-number">
 	        				More than 100
 	        			</label>
 	        		</div>
 	        		<div class="form-group">
 						<label>Area approximately in metres squared:</label>
-						<!-- <input type="text"><span class="input-group-addon">@</span> -->
 						<div class="input-group">							    
 						    <input type="text">
 							<span class="input-group-addon">m<sup>2</sup></span>
 						</div>
-						<span id="helpBlock2" class="help-block">An average house is around 200m<sup>2</sup></span>
+						<span id="helpBlock" class="help-block">An average house is around 200m<sup>2</sup></span>
 					</div>
 	        	</div>
 
@@ -59,37 +58,37 @@
         		<h3>Number of Service Calls (per week):</h3>
         			<div class="checkbox">
 					  <label>
-					    <input type="checkbox" value="">
+					    <input type="checkbox">
 					    Monday
 					  </label>
 					</div>
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" value="">
+					    <input type="checkbox">
 					    Tuesday
 					  </label>
 					</div>
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" value="">
+					    <input type="checkbox">
 					    Wednesday
 					  </label>
 					</div>
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" value="">
+					    <input type="checkbox">
 					    Thursday
 					  </label>
 					</div>
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" value="">
+					    <input type="checkbox">
 					    Friday
 					  </label>
 					</div>
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" value="">
+					    <input type="checkbox">
 					    All Days
 					  </label>
 					</div>
@@ -117,7 +116,7 @@
 	        	<h3>Vacuuum Cleaning and/or Power Sweeping:</h3>
 	        		<div class="checkbox">
 	        			<label>
-	        				<input type="checkbox" value="">
+	        				<input type="checkbox">
 	        				All Carpeted Areas
 	        			</label>
 	        		</div>
@@ -158,7 +157,7 @@
 	        		</div>
 	        		<div class="checkbox">
 	        			<label>
-	        				<input type="checkbox" value="">
+	        				<input type="checkbox">
 	        				Outside Entrance Way
 	        			</label>
 	        		</div>
@@ -171,19 +170,19 @@
 	        			<h4>On Every Call:</h4>
 	        			<div class="checkbox">
 		        			<label>
-		        				<input type="checkbox" value="">
+		        				<input type="checkbox">
 		        				Collect Cups/Glasses from desks
 		        			</label>
 	        			</div>
 	        			<div class="checkbox">
 		        			<label>
-		        				<input type="checkbox" value="">
+		        				<input type="checkbox">
 		        				Handwash Dishes
 		        			</label>
 	        			</div>
 	        			<div class="checkbox">
 		        			<label>
-		        				<input type="checkbox" value="">
+		        				<input type="checkbox">
 		        				Load Dishwasher
 		        			</label>
 	        			</div>
@@ -203,13 +202,13 @@
 	        		</div>
 	        		<div class="radio">
 	        			<label>
-	        				<input type="radio" name="toilet-radio" value="">
+	        				<input type="radio" name="toilet-radio">
 	        				Every Call
 	        			</label>
 	        		</div>
 	        		<div class="radio">
 	        			<label>
-	        				<input type="radio" name="toilet-radio" value="">
+	        				<input type="radio" name="toilet-radio">
 	        				Once a Week
 	        			</label>
 	        		</div>
@@ -220,13 +219,13 @@
 	        		</div>
 	        		<div class="radio">
 	        			<label>
-	        				<input type="radio" name="shower-radio" value="">
+	        				<input type="radio" name="shower-radio">
 	        				Every Call
 	        			</label>
 	        		</div>
 	        		<div class="radio">
 	        			<label>
-	        				<input type="radio" name="shower-radio" value="">
+	        				<input type="radio" name="shower-radio">
 	        				Once a Week
 	        			</label>
 	        		</div>
@@ -236,7 +235,7 @@
 	        		<h3>Glass:</h3>
 	        		<div class="checkbox">
 	        			<label>
-	        				<input type="checkbox" value="">
+	        				<input type="checkbox">
 	        				Spot clean glass doors
 	        			</label>
 	        		</div>
@@ -250,57 +249,57 @@
 	        		<h3>Spring Clean:</h3>
 	        		<div class="checkbox">
 	        			<label>
-	        				<input type="checkbox" value="">
+	        				<input type="checkbox">
 	        				Clean Refrigerator Interior
 	        			</label>
 	        		</div>
 	        		<div class="checkbox">
 	        			<label>
-	        				<input type="checkbox" value="">
+	        				<input type="checkbox">
 	        				Clean Microwave Interior
 	        			</label>
 	        		</div>
 	        		<div class="checkbox">
 	        			<label>
-	        				<input type="checkbox" value="">
+	        				<input type="checkbox">
 	        				Wipe out Drawers
 	        			</label>
 	        		</div>
 	        		<div class="checkbox">
 	        			<label>
-	        				<input type="checkbox" value="">
+	        				<input type="checkbox">
 	        				Clean Internal Partitions and Windows
 	        			</label>
 	        		</div>
 	        		<div class="checkbox">
 	        			<label>
-	        				<input type="checkbox" value="">
+	        				<input type="checkbox">
 	        				Clean Blinds
 	        			</label>
 	        		</div>
 	        		<div id="spring-clean-months">
 	        			<h4>How many months?</h4>
-	        			<div class="checkbox">
+	        			<div class="radio">
 		        			<label>
-		        				<input type="checkbox" value="">
+		        				<input type="radio" name="how-many-months">
 		        				Every 3 Months
 		        			</label>
 	        			</div>
-	        			<div class="checkbox">
+	        			<div class="radio">
 		        			<label>
-		        				<input type="checkbox" value="">
+		        				<input type="radio" name="how-many-months">
 		        				Every 6 Months
 		        			</label>
 	        			</div>
-	        			<div class="checkbox">
+	        			<div class="radio">
 		        			<label>
-		        				<input type="checkbox" value="">
+		        				<input type="radio" name="how-many-months">
 		        				Every 6 Months
 		        			</label>
 	        			</div>
-	        			<div class="checkbox">
+	        			<div class="radio">
 		        			<label>
-		        				<input type="checkbox" value="">
+		        				<input type="radio" name="how-many-months">
 		        				Every 12 Months
 		        			</label>
 	        			</div>
@@ -314,24 +313,27 @@
 	        		<h3>Parking:</h3>
 	        		<div class="checkbox">
 	        			<label>
-	        				<input type="checkbox" value="">
+	        				<input type="checkbox">
 	        				Building has a Car Park
 	        			</label>
         			</div>
         			<div class="checkbox">
 	        			<label>
-	        				<input type="checkbox" value="">
+	        				<input type="checkbox">
 	        				No Parking Near By
 	        			</label>
         			</div>
         			<div class="checkbox">
 	        			<label>
-	        				<input type="checkbox" value="">
+	        				<input type="checkbox">
 	        				Loading Zone Outside Building
 	        			</label>
         			</div>
 	        	</div>
-
+	        	<div>
+	        		<input type="submit" name="get-main-quote" value="Get Quick Quote" class="btn">	
+	        	</div>
+				
 	        </form>
 		</div>
 	        <hr>

@@ -17,8 +17,6 @@ class ContactPage extends Page {
 	private $contactSuccess;
 	private $contactFail;
 
-	// private $contactMessage = [];
-
 	// Methods
 	public function __construct($model) {
 
