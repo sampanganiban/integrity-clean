@@ -18,7 +18,11 @@ class QuoteModel extends Model {
 
 		// If the query failed
 		if( $this->dbc->affected_rows == 1 ) {
-			$_SESSION['quoteID'] = $this->dbc->insert_id;
+			$_SESSION['quoteID']    = $this->dbc->insert_id;
+			$_SESSION['email'] = $email;
+			$_SESSION['name'] = $name;
+
+
 			return $_SESSION['quoteID'];
 		}	
 

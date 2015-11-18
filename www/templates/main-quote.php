@@ -55,7 +55,7 @@
 	        	</div>
 
         		<div id="service-calls" class="form-div">
-        		<h3>Number of Service Calls (per week):</h3>
+        		<h3>Days of Service Calls (per week):</h3>
         			<div class="checkbox">
 					  <label>
 					    <input type="checkbox">
@@ -113,7 +113,7 @@
 					</div>
 	        	</div>
 	        	<div id="vacuum-cleaning" class="form-div">
-	        	<h3>Vacuuum Cleaning and/or Power Sweeping:</h3>
+	        	<h3>Vacuum Cleaning and/or Power Sweeping:</h3>
 	        		<div class="checkbox">
 	        			<label>
 	        				<input type="checkbox">
@@ -132,25 +132,25 @@
 	        			<h4>All hard surface floors: </h4>
 		        		<div class="radio">
 						  <label>
-						    <input type="radio" name="surfaces" id="">
+						    <input type="radio" name="surfaces">
 							Vinyl
 						  </label>
 						</div>
 						<div class="radio">
 						  <label>
-						    <input type="radio" name="surfaces" id="">
+						    <input type="radio" name="surfaces">
 							Tiles						  
 						  </label>
 						</div>
 						<div class="radio">
 						  <label>
-						    <input type="radio" name="surfaces" id="">
+						    <input type="radio" name="surfaces">
 							Concrete
 						  </label>
 						</div>
 						<div class="radio">
 						  <label>
-						    <input type="radio" name="surfaces" id="">
+						    <input type="radio" name="surfaces">
 							Wood
 						  </label>
 						</div>
@@ -198,7 +198,7 @@
 	        		<h4>Toilets</h4>
 	        		<div class="form-group">
 	        			<label>How many?</label>
-	        			<input type="text" id="" name="">
+	        			<input type="text" id="toilets" name="toilets">
 	        		</div>
 	        		<div class="radio">
 	        			<label>
@@ -215,7 +215,7 @@
 	        		<h4>Showers:</h4>
 	        		<div class="form-group">
 	        			<label>How many?</label>
-	        			<input type="text" id="" name="">
+	        			<input type="text" id="showers" name="showers">
 	        		</div>
 	        		<div class="radio">
 	        			<label>

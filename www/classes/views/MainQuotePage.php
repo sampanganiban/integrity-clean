@@ -7,6 +7,15 @@ class MainQuotePage extends Page {
 	// Properties
 	private $totalErrors = 0;
 
+	// Properties for Online Quote form
+	private $staffNumber;
+	private $dusting;
+	private $surfaces;
+	private $toiletNum;
+	private $toiletRadio;
+	private $showerRadio;
+	private $howManyMonths;
+
 	public function contentHTML() {
 		include 'templates/main-quote.php';
 	}
@@ -31,13 +40,67 @@ class MainQuotePage extends Page {
 
 		// Validation
 
+		// Make form sticky
+		$this->$staffNumber = trim($_POST['']);
+		$this->$dusting = trim($_POST['']);
+		$this->$surfaces = trim($_POST['']);
+		$this->$toiletNum = trim($_POST['']);
+		$this->$toiletRadio = trim($_POST['']);
+		$this->$showerRadio = trim($_POST['']);
+		$this->$howManyMonths = trim($_POST['']);
+
+
+		// Facility Details and Staff
+
+		// Days of Service Calls
+
+		// Dusting
+
+		// Vacuum Cleaning
+
+		// Sweep and Mop
+
+		// Clean the cafeteria
+
+		// Bathrooms
+
+		// Glass
+
+		// Spring Clean
+
+		// Parking
+
+
+
 		// If passed validation get the users info from the database
 		if($this->totalErrors == 0) {
 			$data = $this->model->getUserInfo();
 				
-			// Once you get the customer info use it to fill in the info for sending an email
+			// Insert the customer info from the database into mailgun to send an email
+			
+			// Instantiate the client
+			$mgClient = new Mailgun('key-a5d6c43600911540c7ff4033f03e4f38');
+			$domain = "sandboxfcac969b25074c6f969079a248e252c4.mailgun.org";
+
+			// Send to user
+			$result = $mgClient->sendMessage($domain, array(
+			    'from'    => 'Integrity Clean <mailgun@sandboxfcac969b25074c6f969079a248e252c4.mailgun.org>',
+			    'to'      => $_SESSION['email'],
+			    'subject' => 'Thank you for sending your getting an online quote in Integrity Clean',
+			    'text'    => './templates/customerQuote.php'
+			));
 		}
 	}
+
+
+
+
+
+
+
+
+
+
 
 
 
