@@ -69,7 +69,7 @@ class ContactPage extends Page {
 			$this->contactMessageError = 'Sorry your message is too short, your message should be at least 10 characters';
 			$this->totalErrors++;
 		} elseif( strlen($this->message) > 2000 ) {
-			$this->contactMessageError = 'Sorry, your message is too long, can not be longer than 200 characters';
+			$this->contactMessageError = 'Sorry, your message is too long, can not be longer than 2000 characters';
 			$this->totalErrors++;
 		}
 

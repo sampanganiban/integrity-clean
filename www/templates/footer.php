@@ -38,7 +38,7 @@
                 <h3><a href="index.php?page=register">REGISTER AN ACCOUNT</a></h3>
                 <h3>OR</h3>
                 <h3>Login to your account</h3>
-                <form action="index.php?page=login" method="post">
+                <form action="index.php?page=<?php echo $_GET['page']; ?>" method="post">
 
                   <div class="form-group">
                     <input type="text" name="username" id="username" value="<?php echo $this->username; ?>" placeholder="username">
@@ -74,8 +74,17 @@
 
         // If the requested page is the home the header will animate if not then the animated header will turn off and just display the nav bar
         if($_GET['page'] == 'home') : ?>
-            <script src="js/grayscale.js"></script>
+          <script src="js/grayscale.js"></script>
         <?php endif;
+
+    ?>
+
+    <?php
+
+      // If the requested page was the testimonials the slider will show up
+    if($_GET['page'] == 'testimonials') : ?>
+      <script src="js/slider.js"></script>
+    <?php endif;
 
     ?>
 

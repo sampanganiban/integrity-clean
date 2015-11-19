@@ -22,7 +22,7 @@ class Model {
 		$requestedPage = $_GET['page'];
 
 		// Prepare the query
-		$sql = "SELECT Title, Description FROM pages WHERE Name = '$requestedPage'";
+		$sql = "SELECT title, description FROM pages WHERE name = '$requestedPage'";
 
 		// Run the query
 		$result = $this->dbc->query($sql);
@@ -31,8 +31,8 @@ class Model {
 		$pageData = $result->fetch_assoc();
 
 		// Save the title and description in the properties above
-		$this->title       = $pageData['Title'];
-		$this->description = $pageData['Description'];
+		$this->title       = $pageData['title'];
+		$this->description = $pageData['description'];
 	}
 
 	// Filter the inputs and values
@@ -51,10 +51,10 @@ class Model {
 		$username = $this->dbc->real_escape_string( $username );
 
 		// Prepare SQL to find a user and get the hashed password
-		$sql = "SELECT id, password, privilege FROM users WHERE username = '$username'  ";
+		$sql = "SELECT id, password, privilege FROM users WHERE username = '$username' ";
 
 		// Run the SQL
-		$result = $this->dbc->query( $sql );
+		$result = $this->dbc->query($sql);
 
 		// Make sure there is a result
 		if( $result->num_rows == 0 ) {

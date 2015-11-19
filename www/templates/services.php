@@ -1,9 +1,29 @@
 <!-- Welcome Section -->
     <section id="welcome" class="welcome" class="text-center">
         <div class="col-lg-8 col-lg-offset-2">
+        <h1>Our Services</h1>
+            <hr> 
             <div class="row">
-                <h1>Our Services</h1>
-                <hr> 
+            <h2>Being environmentally friendly</h2>
+            <hr>
+                <div class="col-lg-6">
+                    <img src="http://placehold.it/500x400" class="img-responsive" alt="">
+                </div>
+                <div class="col-lg-6">
+                    <h3>HYGIENE AND CLEANING PRODUCTS</h3>
+                    <p>We use BIODEGRADABLE products and the correct amounts of dilution, which is often overlooked in caring for the environment.</p>
+                    <p>SEPARATE EQUIPMENT is reserved for the cleaning of toilet areas and rubber gloves are worn.</p>
+                    <p>WE DO NOT CARRY TOILET BRUSHES AROUND. This means there is no chance of contaminated water dripping onto surfaces and other areas, outside the toilet area. All toilets we clean must have their own toilet brushes.</p>
+                    <p>We use YOUR DISHCLOTH IN YOUR CAFETERIA – not some stray cleaning cloth.</p>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+
+    <section>
+        <div class="col-lg-8 col-lg-offset-2">
+            <div class="row">
                 <div class="col-lg-6">
                     <h2>A Typical Night</h2>
                     <p>We call security to say we are on site - if required. We clean toilets, showers, restock consumables, wash our hands then clean kitchens, do dishes, remove rubbish, replace bin liners, dust, vacuum, clean window and mop. Then last but by no means least we set the alarms, turn off your lights and lock up.</p>
@@ -44,25 +64,5 @@
                 </div>
                <hr>
             </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="col-lg-8 col-lg-offset-2">
-            <div class="row">
-            <h2>Being environmentally friendly</h2>
-            <hr>
-                <div class="col-lg-6">
-                    <img src="http://placehold.it/500x400" class="img-responsive" alt="">
-                </div>
-                <div class="col-lg-6">
-                    <h3>HYGIENE AND CLEANING PRODUCTS</h3>
-                    <p>We use BIODEGRADABLE products and the correct amounts of dilution, which is often overlooked in caring for the environment.</p>
-                    <p>SEPARATE EQUIPMENT is reserved for the cleaning of toilet areas and rubber gloves are worn.</p>
-                    <p>WE DO NOT CARRY TOILET BRUSHES AROUND. This means there is no chance of contaminated water dripping onto surfaces and other areas, outside the toilet area. All toilets we clean must have their own toilet brushes.</p>
-                    <p>We use YOUR DISHCLOTH IN YOUR CAFETERIA – not some stray cleaning cloth.</p>
-                </div>
-            </div>
-            <hr>
         </div>
     </section>

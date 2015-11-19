@@ -1,7 +1,7 @@
 <?php
 
 // Autoload the dependencies
-require '../vendor/autoload.php';
+require './vendor/autoload.php';
 
 // Set time for the site
 date_default_timezone_set("Pacific/Auckland");

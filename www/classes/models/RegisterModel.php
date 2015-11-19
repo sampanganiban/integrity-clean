@@ -49,7 +49,7 @@ class RegisterModel extends Model {
 		$hashedPassword = password_hash( $password, PASSWORD_BCRYPT );
 
 		// Prepare SQL for insert
-		$sql = "INSERT INTO users VALUES (NULL, '$username', '$hashedPassword', '$email', 'user')";
+		$sql = "INSERT INTO users VALUES (NULL, '$username', '$email', '$hashedPassword', 'user')";
 
 		// Run the SQL
 		$this->dbc->query($sql);

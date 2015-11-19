@@ -78,10 +78,11 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-8 col-md-offset-2">
+                            <img src="./img/logo/logo-no-text2.png" alt="">
                                 <img src="./img/logo/desktop-logo.png" alt="">
                                 <h1 id="intro-text">Our Name, Our Policy</h1>
                                 <!-- Make logo bigger -->
-                                <img src="./img/logo/logo-no-text.png" alt="">
+                                <!-- <img src="./img/logo/logo-no-text2.png" alt=""> -->
                             </div>
                         </div>
                     </div>
