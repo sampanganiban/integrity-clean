@@ -40,6 +40,22 @@ body {
   margin-bottom:5px;
 }
 
+#review-results {
+  background-color:rgba(49,168,224,0.3);
+  width:500px;
+  padding:1.5em;
+  margin:.5em;
+  float:left;
+}
+
+#review-results p {
+  margin:-3px;
+}
+
+#review-results #time-of-review em {
+  margin-left:25em;
+}
+
 input {
   color:#444;
 }

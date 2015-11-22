@@ -2,10 +2,28 @@
     <section id="welcome" class="welcome" class="text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h1>Reviews</h1>
+                <h1>General Reviews</h1>
                 <hr>
+				
+				<?php
+					// Get the results from the database
+					$result = $this->model->getAllReviews();
+				?>
+
+				<div id="reviews" class="clearfix">
+					<!-- This will loop through and display each order made -->
+					<?php while($row = $result->fetch_assoc()): ?>
+						<div id="review-results">
+							<p id="review-comment"><strong>Review: </strong> <?php echo $row['comment']; ?></p>
+							<p id="review-name"><strong>Name: </strong><?php echo $row['name']; ?></p>
+							<small id="time-of-review"><em><?php echo $row['time_review_added']; ?></em></small>
+						</div>
+					<?php endwhile; ?>
+				</div>
+				<hr>
 
                 <?php if(isset($_SESSION['username'])) : ?>
+                	<hr>
 				
 					<div class="row">
 

@@ -59,7 +59,7 @@ class TestimonialsPage extends Page {
 		}
 
 		// If there were no errors
-		if( $this->totalErrors = 0 ) {
+		if( $this->totalErrors == 0 ) {
 			$result = $this->model->addReview();
 			
 			// Let the user know if adding their review was successful
