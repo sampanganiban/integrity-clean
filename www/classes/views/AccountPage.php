@@ -21,37 +21,15 @@ class AccountPage extends Page {
 			$this->processPasswordChange();
 		}
 
-		// // If the user us an admin
-		// if( isset($_SESSION['privilege']) && $_SESSION['privilege'] == 'admin' ) {
-
-		// 	// If the admin has submitted the deleting order button
-		// 	if( isset($_POST['delete-order']) ) {
-		// 		$this->processDeleteOrder();
-		// 	}
-
-		// 	// If the admin has submitted the deleting message button
-		// 	if( isset($_POST['delete-message']) ) {
-		// 		$this->processDeleteMessage();
-		// 	}
-
-		// 	// If the admin has clicked the update menu button
-		// 	if( isset($_POST['edit-menu'])) {
-		// 		$this->processMenuEdit();
-		// 	}
-
-		// }
-
 	}
 
 	public function contentHTML() {
-		
-		include 'templates/account.php';
 	
+		include 'templates/account.php';
+		
 		// If user is an admin
-		if( $_SESSION['privilege'] == 'admin' ) {
-
+		if( isset($_SESSION['privilege']) == 'admin' ) {
 			include 'templates/admin.php';
-
 		}
 
 	}

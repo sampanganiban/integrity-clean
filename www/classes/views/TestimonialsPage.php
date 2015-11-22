@@ -13,6 +13,10 @@ class TestimonialsPage extends Page {
 	private $submitReviewError;
 	private $submitReviewSuccess;
 
+	// Properties for deleting reviews
+	private $deleteReviewSuccess;
+	private $deleteReviewFail;
+
 	public function contentHTML() {
 
 		include 'templates/testimonials.php';
@@ -29,6 +33,27 @@ class TestimonialsPage extends Page {
 			// Process the form
 			$this->processReview();
 		}
+
+		// If the user us an admin
+		if( isset($_SESSION['privilege']) && $_SESSION['privilege'] == 'admin' ) {
+
+			// If the admin has submitted the deleting order button
+			if( isset($_POST['review-delete']) ) {
+				$this->processDeleteReview();
+			}
+
+			// If the admin has submitted the deleting message button
+			// if( isset($_POST['delete-message']) ) {
+			// 	$this->processDeleteMessage();
+			// }
+
+			// If the admin has clicked the update menu button
+			// if( isset($_POST['edit-menu'])) {
+			// 	$this->processMenuEdit();
+			// }
+
+		}
+
 	}
 
 	public function processReview() {
@@ -68,16 +93,18 @@ class TestimonialsPage extends Page {
 			} else {
 				$this->submitReviewError = 'Sorry, something went wrong when adding your review, please try in a few minutes.';
 			}
-
 		}
 
+	}
 
+	private function processDeleteReview() {
+		$result = $this->model->deleteReview();
 
-
-
-
-
-
+		if($result) {
+			$this->deleteReviewSuccess = 'The order you have selected has been deleted';
+		} else {
+			$this->deleteReviewFail = 'The order has not been deleted';
+		}
 
 	}
 

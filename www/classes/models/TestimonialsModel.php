@@ -28,5 +28,22 @@ class TestimonialsModel extends Model {
 			return $this->dbc->query("SELECT id, name, comment, time_review_added FROM reviews");
 
 	}
+
+	public function deleteReview() {
+
+		$id = $_POST['review-id'];
+	
+		$sql = "DELETE FROM reviews WHERE id = $id";
+
+	 	$this->dbc->query($sql);
+
+	 	// If the query failed
+		if( $this->dbc->affected_rows == 1 ) {
+			return true;
+		}
+
+		return false;
+
+	}
 	
 }

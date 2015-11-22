@@ -29,7 +29,7 @@
                 <hr>
             </div>
             <div class="col-lg-4">
-                <img src="http://placehold.it/450x360" class="img-responsive" alt="" id="image-of-aaron">
+                <img src="./img/aaron-cleaning.jpg" class="img-responsive" alt="" id="image-of-aaron">
             </div>
         </div>
     </section>

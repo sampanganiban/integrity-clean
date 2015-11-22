@@ -41,12 +41,12 @@ class MainQuotePage extends Page {
 		// Validation
 
 		// Make form sticky
-		$this->$staffNumber = trim($_POST['']);
-		$this->$dusting = trim($_POST['']);
-		$this->$surfaces = trim($_POST['']);
-		$this->$toiletNum = trim($_POST['']);
-		$this->$toiletRadio = trim($_POST['']);
-		$this->$showerRadio = trim($_POST['']);
+		$this->$staffNumber   = trim($_POST['']);
+		$this->$dusting       = trim($_POST['']);
+		$this->$surfaces      = trim($_POST['']);
+		$this->$toiletNum     = trim($_POST['']);
+		$this->$toiletRadio   = trim($_POST['']);
+		$this->$showerRadio   = trim($_POST['']);
 		$this->$howManyMonths = trim($_POST['']);
 
 
@@ -86,8 +86,8 @@ class MainQuotePage extends Page {
 			$result = $mgClient->sendMessage($domain, array(
 			    'from'    => 'Integrity Clean <mailgun@sandboxfcac969b25074c6f969079a248e252c4.mailgun.org>',
 			    'to'      => $_SESSION['email'],
-			    'subject' => 'Thank you for sending your getting an online quote in Integrity Clean',
-			    'text'    => './templates/customerQuote.php'
+			    'subject' => 'Thank you for getting an online quote with us, we will contact you for further details',
+			    'text'    => ''
 			));
 		}
 	}

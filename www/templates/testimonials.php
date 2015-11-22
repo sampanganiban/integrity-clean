@@ -14,11 +14,19 @@
 					<!-- This will loop through and display each order made -->
 					<?php while($row = $result->fetch_assoc()): ?>
 						<div id="review-results">
-							<p id="review-comment"><strong>Review: </strong> <?php echo $row['comment']; ?></p>
-							<p id="review-name"><strong>Name: </strong><?php echo $row['name']; ?></p>
-							<small id="time-of-review"><em><?php echo $row['time_review_added']; ?></em></small>
+							<form method="post" action="index.php?page=testimonials">
+								<p id="review-comment"><strong>Review: </strong> <?php echo $row['comment']; ?></p>
+								<p id="review-name"><strong>Name: </strong><?php echo $row['name']; ?></p>
+								<small id="time-of-review"><em><?php echo $row['time_review_added']; ?></em></small>
+								<?php if(isset($_SESSION['privilege']) && $_SESSION['privilege'] == 'admin' ) : ?>
+								<input type="hidden" value="<?php echo $row['id']; ?>" name="review-id">
+                                <input type="submit" name="delete-review" value="Delete this Review" class="btn">
+	                        </form>
+                            <?php endif; ?>
 						</div>
 					<?php endwhile; ?>
+					<?php $this->bootstrapAlert($this->deleteReviewSuccess, 'success') ?>
+					<?php $this->bootstrapAlert($this->deleteReviewFail, 'danger') ?>
 				</div>
 				<hr>
 
@@ -51,17 +59,17 @@
 				<h2>Testimonials</h2>
 				<p>Have a look at what our clients had to say about our services</p>
 				<hr>
-                <!-- <div class="wrapper">
-					  <p class="next">&gt;</p>
-					  <p class="prev">&lt;</p>
-					  <article class="slider">
+                <div class="wrapper">
+				    <p class="next">&gt;</p>
+				    <p class="prev">&lt;</p>
+				    <article class="slider">
 				    	<section style="display: block;"></section>
-				    	<section></section>
-						    <section></section>
-						    <section></section>
-						    <section></section>
+			    		<section></section>
+					    <section></section>
+					    <section></section>
+					    <section></section>
 				  	</article>
-				</div> -->
+				</div>
 
 				
             </div>

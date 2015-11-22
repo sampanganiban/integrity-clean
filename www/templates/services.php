@@ -7,7 +7,7 @@
             <h2>Being environmentally friendly</h2>
             <hr>
                 <div class="col-lg-6">
-                    <img src="http://placehold.it/500x400" class="img-responsive" alt="">
+                    <img src="./img/recycling-wellington.jpg" class="img-responsive" alt="">
                 </div>
                 <div class="col-lg-6">
                     <h3>HYGIENE AND CLEANING PRODUCTS</h3>

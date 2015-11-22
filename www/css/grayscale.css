@@ -56,6 +56,11 @@ body {
   margin-left:25em;
 }
 
+#change-password-form .form-group {
+  display:inline-block;
+  margin:1em;
+}
+
 input {
   color:#444;
 }
@@ -352,9 +357,32 @@ ul.banner-social-buttons {
     float:left;
   }
 
+  #change-password-form input {
+    display:block;
+    margin:0 1em;
+  }
+
+  #change-password-form .btn {
+    margin:0 auto;
+  }
+
 }
 
 @media (min-width: 768px) {
+
+  #change-password-form .form-group {
+    margin:0;
+    text-align:left;
+    display:inline-block;
+  }
+
+  #change-password-form input {
+    display:inline-block;
+  }
+
+  #change-password-form .btn {
+    margin:1em;
+  }
 
   #main-quote-form .form-div {
     margin:2em;

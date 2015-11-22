@@ -1,5 +1,6 @@
 <div class="container">
 	<div class="row">
-		<h1>This page is only for the admin</h1>
+		<h2>Edit the Gallery</h2>
+		
 	</div>
 </div>
