@@ -10,37 +10,37 @@
 	        		<h3>Facility Details and Staff:</h3>
 	        		<div class="radio">
 	        			<label>
-	        				<input type="radio" name="staffNumber" value="1-5">
+	        				<input type="radio" name="staffNumber" value="1-5" <?php if (isset($_POST['staffNumber']) and $_POST['staffNumber'] == '1-5') echo ' checked'; ?>>
 	        				1-5
 	        			</label>
 	        		</div>
 	        		<div class="radio">
 	        			<label>
-	        				<input type="radio" name="staffNumber" value="5-15">
+	        				<input type="radio" name="staffNumber" value="5-15" <?php if (isset($_POST['staffNumber']) and $_POST['staffNumber'] == '5-15') echo ' checked'; ?>>
 	        				5-15
 	        			</label>
 	        		</div>
 	        		<div class="radio">
 	        			<label>
-	        				<input type="radio" name="staffNumber" value="15-30">
+	        				<input type="radio" name="staffNumber" value="15-30" <?php if (isset($_POST['staffNumber']) and $_POST['staffNumber'] == '15-30') echo ' checked'; ?>>
 	        				15-30
 	        			</label>
 	        		</div>
 	        		<div class="radio">
 	        			<label>
-	        				<input type="radio" name="staffNumber" value="30-50">
+	        				<input type="radio" name="staffNumber" value="30-50" <?php if (isset($_POST['staffNumber']) and $_POST['staffNumber'] == '30-50') echo ' checked'; ?>>
 	        				30-50
 	        			</label>
 	        		</div>
 	        		<div class="radio">
 	        			<label>
-	        				<input type="radio" name="staffNumber" value="50-100">
+	        				<input type="radio" name="staffNumber" value="50-100" <?php if (isset($_POST['staffNumber']) and $_POST['staffNumber'] == '50-100') echo ' checked'; ?>>
 	        				50-100
 	        			</label>
 	        		</div>
 	        		<div class="radio">
 	        			<label>
-	        				<input type="radio" name="staffNumber" value="More than 100">
+	        				<input type="radio" name="staffNumber" value="More than 100" <?php if (isset($_POST['staffNumber']) and $_POST['staffNumber'] == 'More than 100') echo ' checked'; ?>>
 	        				More than 100
 	        			</label>
 	        		</div>
@@ -52,60 +52,61 @@
 						</div>
 						<span id="helpBlock" class="help-block">An average house is around 200m<sup>2</sup></span>
 					</div>
+					<?php echo $this->bootstrapAlert($this->staffNumError, 'danger') ?>
 	        	</div>
-	        	<?php echo $this->bootstrapAlert($this->staffNumError, 'danger') ?>
-
 
         		<div id="service-calls" class="form-div">
         		<h3>Days of Service Calls (per week):</h3>
         			<div class="checkbox">
 					  <label>
-					    <input type="checkbox" name="daysOfWeek[]" value="Monday">
+					    <input type="checkbox" name="daysOfWeek[]" value="Monday" <?php if (isset($_POST['daysOfWeek']) and $_POST['daysOfWeek'] == 'Monday') echo ' checked=checked'; ?>>
 					    Monday
 					  </label>
 					</div>
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" name="daysOfWeek[]" value="Tuesday">
+					    <input type="checkbox" name="daysOfWeek[]" value="Tuesday" <?php if (isset($_POST['daysOfWeek']) and $_POST['daysOfWeek'] == 'Tuesday') echo ' checked=checked'; ?>>
 					    Tuesday
 					  </label>
 					</div>
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" name="daysOfWeek[]" value="Wednesday">
+					    <input type="checkbox" name="daysOfWeek[]" value="Wednesday" <?php if (isset($_POST['daysOfWeek']) and $_POST['daysOfWeek'] == 'Wednesday') echo ' checked=checked'; ?>>
 					    Wednesday
 					  </label>
 					</div>
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" name="daysOfWeek[]" value="Thursday">
+					    <input type="checkbox" name="daysOfWeek[]" value="Thursday" <?php if (isset($_POST['daysOfWeek']) and $_POST['daysOfWeek'] == 'Thursday') echo ' checked=checked'; ?>>
 					    Thursday
 					  </label>
 					</div>
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" name="daysOfWeek[]" value="Friday">
+					    <input type="checkbox" name="daysOfWeek[]" value="Friday" <?php if (isset($_POST['daysOfWeek']) and $_POST['daysOfWeek'] == 'Friday') echo ' checked=checked'; ?>>
 					    Friday
 					  </label>
 					</div>
 					<div class="checkbox">
 					  <label>
-					    <input type="checkbox" name="daysOfWeek[]" value="All Days">
+					    <input type="checkbox" name="daysOfWeek[]" value="All Days" <?php if (isset($_POST['daysOfWeek']) and $_POST['daysOfWeek'] == 'All Days') echo ' checked=checked'; ?>>
 					    All Days
 					  </label>
 					</div>
+					<?php echo $this->bootstrapAlert($this->daysOfWeekError, 'danger') ?>
         		</div>
+
 	        	<div id="dusting" class="form-div">
 	        		<h3>Dusting (Dust all flat surfaces):</h3>
 	        		<div class="radio">
 					  <label>
-					    <input type="radio" name="dusting" id="once-a-week" value="Once a Week">
+					    <input type="radio" name="dusting" id="once-a-week" value="Once a Week" <?php if (isset($_POST['dusting']) and $_POST['dusting'] == 'Once a Week') echo ' checked'; ?>>
 					    Once a Week
 					  </label>
 					</div>
 					<div class="radio">
 					  <label>
-					    <input type="radio" name="dusting" id="once-a-month" value="Once a Month">
+					    <input type="radio" name="dusting" id="once-a-month" value="Once a Month" <?php if (isset($_POST['dusting']) and $_POST['dusting'] == 'Once a Month') echo ' checked'; ?>>
 						Once a Month
 					  </label>
 					</div>
@@ -113,7 +114,9 @@
 						<label for="other-requirements">Other Requirements:</label>
 						<textarea name="dusting-textarea" id="dusting-textarea" cols="30" rows="2"></textarea>
 					</div>
+					<?php echo $this->bootstrapAlert($this->dustingError, 'danger') ?>
 	        	</div>
+
 	        	<div id="vacuum-cleaning" class="form-div">
 	        	<h3>Vacuum Cleaning and/or Power Sweeping:</h3>
 	        		<div class="checkbox">
@@ -126,7 +129,8 @@
 						<label for="other-requirements">Other Requirements:</label>
 						<textarea name="carpet-textarea" id="carpet-textarea" cols="30" rows="2"></textarea>
 					</div>
-	        	</div>	 
+	        	</div>
+
 	        	<div id="sweep-and-mop" class="form-div">
 	        		<h3>Sweep and Mop:</h3>
 
@@ -134,25 +138,25 @@
 	        			<h4>All hard surface floors: </h4>
 		        		<div class="radio">
 						  <label>
-						    <input type="radio" name="surfaces" value="Vinyl">
+						    <input type="radio" name="surfaces" value="Vinyl" <?php if (isset($_POST['surfaces']) and $_POST['surfaces'] == 'Vinyl') echo ' checked'; ?>>
 							Vinyl
 						  </label>
 						</div>
 						<div class="radio">
 						  <label>
-						    <input type="radio" name="surfaces" value="Tiles">
+						    <input type="radio" name="surfaces" value="Tiles" <?php if (isset($_POST['surfaces']) and $_POST['surfaces'] == 'Tiles') echo ' checked'; ?>>
 							Tiles						  
 						  </label>
 						</div>
 						<div class="radio">
 						  <label>
-						    <input type="radio" name="surfaces" value="Concrete">
+						    <input type="radio" name="surfaces" value="Concrete" <?php if (isset($_POST['surfaces']) and $_POST['surfaces'] == 'Concrete') echo ' checked'; ?>>
 							Concrete
 						  </label>
 						</div>
 						<div class="radio">
 						  <label>
-						    <input type="radio" name="surfaces" value="Wood">
+						    <input type="radio" name="surfaces" value="Wood" <?php if (isset($_POST['surfaces']) and $_POST['surfaces'] == 'Wood') echo ' checked'; ?>>
 							Wood
 						  </label>
 						</div>
@@ -163,6 +167,7 @@
 	        				Outside Entrance Way
 	        			</label>
 	        		</div>
+	        		<?php echo $this->bootstrapAlert($this->surfacesError, 'danger') ?>
 	        	</div>
 
 	        	<div id="cafeteria" class="form-div">
@@ -172,19 +177,19 @@
 	        			<h4>On Every Call:</h4>
 	        			<div class="checkbox">
 		        			<label>
-		        				<input type="checkbox" name="cafeteria[]" value="">
+		        				<input type="checkbox" name="cafeteria[]" value="Collect Cups/Glasses from desks">
 		        				Collect Cups/Glasses from desks
 		        			</label>
 	        			</div>
 	        			<div class="checkbox">
 		        			<label>
-		        				<input type="checkbox" name="cafeteria[]" value="">
+		        				<input type="checkbox" name="cafeteria[]" value="Handwash Dishes">
 		        				Handwash Dishes
 		        			</label>
 	        			</div>
 	        			<div class="checkbox">
 		        			<label>
-		        				<input type="checkbox" name="cafeteria[]" value="">
+		        				<input type="checkbox" name="cafeteria[]" value="Load Dishwasher">
 		        				Load Dishwasher
 		        			</label>
 	        			</div>
@@ -193,6 +198,7 @@
 						<label for="other-requirements">Other Requirements:</label>
 						<textarea name="carpet-textarea" id="cafeteria-textarea" cols="30" rows="2"></textarea>
 					</div>
+					<?php echo $this->bootstrapAlert($this->cafeteriaError, 'danger') ?>
 	        	</div>
 	        	
 	        	<div id="bathroom-area" class="form-div">
@@ -204,16 +210,17 @@
 	        		</div>
 	        		<div class="radio">
 	        			<label>
-	        				<input type="radio" name="toilet-radio" value="Every Call">
+	        				<input type="radio" name="toilet-radio" value="Every Call" <?php if (isset($_POST['toilet-radio']) and $_POST['toilet-radio'] == 'Every Call') echo ' checked'; ?>>
 	        				Every Call
 	        			</label>
 	        		</div>
 	        		<div class="radio">
 	        			<label>
-	        				<input type="radio" name="toilet-radio" value="Once a Week">
+	        				<input type="radio" name="toilet-radio" value="Once a Week" <?php if (isset($_POST['toilet-radio']) and $_POST['toilet-radio'] == 'Once a Week') echo ' checked'; ?>>
 	        				Once a Week
 	        			</label>
 	        		</div>
+	        		<?php echo $this->bootstrapAlert($this->toiletError, 'danger') ?>
 	        		<h4>Showers:</h4>
 	        		<div class="form-group">
 	        			<label>How many?</label>
@@ -221,15 +228,16 @@
 	        		</div>
 	        		<div class="radio">
 	        			<label>
-	        				<input type="radio" name="shower-radio" value="Every Week">
+	        				<input type="radio" name="shower-radio" value="Every Week" <?php if (isset($_POST['shower-radio']) and $_POST['shower-radio'] == 'Every Call') echo ' checked'; ?>>
 	        				Every Call
 	        			</label>
 	        		</div>
 	        		<div class="radio">
 	        			<label>
-	        				<input type="radio" name="shower-radio" value="Once a Week">
+	        				<input type="radio" name="shower-radio" value="Once a Week" <?php if (isset($_POST['shower-radio']) and $_POST['shower-radio'] == 'Once a Week') echo ' checked'; ?>>
 	        				Once a Week
 	        			</label>
+	        			<?php echo $this->bootstrapAlert($this->showerError, 'danger') ?>
 	        		</div>
 	        	</div>
 
@@ -251,7 +259,7 @@
 	        			<label>
 	        				<input type="checkbox" name="consumables" value="Rubbish Bags">
 	        				Rubbish Bags
-	        			</label>	
+	        			</label>
 	        		</div>
 	        		<div class="checkbox">
 	        			<label>
@@ -273,6 +281,7 @@
 	        				Only
 	        			</label>
 	        		</div>
+	        		<?php echo $this->bootstrapAlert($this->supplyConsumablesError, 'danger') ?>
 	        	</div>
 
 	        	<div id="glass" class="form-div">
@@ -303,6 +312,7 @@
 	        				No
 	        			</label>
 	        		</div>
+	        		<?php echo $this->bootstrapAlert($this->cleanCupboardError, 'danger') ?>
 	        	</div>
 				
 				<div id="spring-clean" class="form-div">
@@ -337,29 +347,30 @@
 	        				Clean Blinds
 	        			</label>
 	        		</div>
+	        		<?php echo $this->bootstrapAlert($this->springCleanError, 'danger') ?>
 	        		<div id="spring-clean-months">
 	        			<h4>How many months?</h4>
 	        			<div class="radio">
 		        			<label>
-		        				<input type="radio" name="how-many-months" value="Every 3 months">
+		        				<input type="radio" name="how-many-months" value="Every 3 months" <?php if (isset($_POST['how-many-months']) and $_POST['how-many-months'] == 'Every 3 Months') echo ' checked'; ?>>
 		        				Every 3 Months
 		        			</label>
 	        			</div>
 	        			<div class="radio">
 		        			<label>
-		        				<input type="radio" name="how-many-months" value="Every 6 months">
+		        				<input type="radio" name="how-many-months" value="Every 6 months" <?php if (isset($_POST['how-many-months']) and $_POST['how-many-months'] == 'Every 6 Months') echo ' checked'; ?>>
 		        				Every 6 Months
 		        			</label>
 	        			</div>
 	        			<div class="radio">
 		        			<label>
-		        				<input type="radio" name="how-many-months" value="Every 9 months">
+		        				<input type="radio" name="how-many-months" value="Every 9 months" <?php if (isset($_POST['how-many-months']) and $_POST['how-many-months'] == 'Every 9 Months') echo ' checked'; ?>>
 		        				Every 9 Months
 		        			</label>
 	        			</div>
 	        			<div class="radio">
 		        			<label>
-		        				<input type="radio" name="how-many-months" value="Every 12 months">
+		        				<input type="radio" name="how-many-months" value="Every 12 months" <?php if (isset($_POST['how-many-months']) and $_POST['how-many-months'] == 'Every 12 Months') echo ' checked'; ?>>
 		        				Every 12 Months
 		        			</label>
 	        			</div>
@@ -368,6 +379,7 @@
 						<label for="other-requirements">Other Requirements:</label>
 						<textarea name="carpet-textarea" id="cafeteria-textarea" cols="30" rows="2"></textarea>
 					</div>
+					<?php echo $this->bootstrapAlert($this->springCleanMonthsError, 'danger') ?>
 	        	</div>
 
 	        	<div id="parking" class="form-div">
@@ -390,6 +402,7 @@
                             Loading Zone Outside Building
                         </label>
                     </div>
+                    <?php echo $this->bootstrapAlert($this->parkingError, 'danger') ?>
                 </div>
 
 	        	<div>

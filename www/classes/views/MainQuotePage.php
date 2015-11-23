@@ -8,18 +8,42 @@ class MainQuotePage extends Page {
 	private $totalErrors = 0;
 
 	// Properties for Online Quote form
-	private $staffNumber;
 	private $staffNumError;
+	private $staffNumber;
 	
-	private $daysOfWeek;
 	private $daysOfWeekError;
-	
+	private $daysOfWeek;
+
+	private $dustingError;
 	private $dusting;
+
+	private $cafeteriaError;
+	private $cafeteria;
+	
+	private $surfacesError;
 	private $surfaces;
+
+	private $toiletError;
 	private $toiletNum;
-	private $toiletRadio;
-	private $showerRadio;
-	private $howManyMonths;
+
+	private $showerError;
+	private $showerNum;
+
+	private $cleanCupboardError;
+	private $cleanCupboard;
+
+	private $supplyConsumablesError;
+	private $supplyConsumables;
+
+	private $springCleanError;
+	private $springClean;
+
+	private $springCleanMonthsError;
+	private $springCleanMonths;
+
+	private $parkingError;
+	private $parking;
+
 
 	public function contentHTML() {
 		include 'templates/main-quote.php';
@@ -44,14 +68,13 @@ class MainQuotePage extends Page {
 	public function processQuickQuote() {
 
 		// VALIDATION 
-		$totalErrors = 0;
 
 		// FACILITY DETAILS AND STAFF
 		
 		// If the user has not selected a number of staff
 		if( !isset($_POST['staffNumber']) ) {
 			$this->staffNumError = 'Please select the amount of staff members in your facility.';
-			$totalErrors++;
+			$this->totalErrors++;
 		} else {
 			// Save the number of staff selected by the user
 			$this->staffNumber = $_POST['staffNumber'];
@@ -60,7 +83,7 @@ class MainQuotePage extends Page {
 		// DAYS OF CALLING SERVICE
 		if( !isset($_POST['daysOfWeek']) ) {
 			$this->daysOfWeekError = 'error 2';
-			$totalErrors++;
+			$this->totalErrors++;
 		} else {
 			// Save the data selected by the user
 			$this->daysOfWeek = $_POST['daysOfWeek'];
@@ -69,7 +92,7 @@ class MainQuotePage extends Page {
 		// DUSTING
 		if( !isset($_POST['dusting']) ) {
 			$this->dustingError = 'error 3';
-			$totalErrors++;
+			$this->totalErrors++;
 		} else {
 			// Save the data selected by the user
 			$this->dusting = $_POST['dusting'];
@@ -78,7 +101,7 @@ class MainQuotePage extends Page {
 		// CAFETERIA
 		if( !isset($_POST['cafeteria']) ) {
 			$this->cafeteriaError = 'error 5';
-			$totalErrors++;
+			$this->totalErrors++;
 		} else {
 			// Save the data selected by the user
 			$this->cafeteria = $_POST['cafeteria'];
@@ -87,7 +110,7 @@ class MainQuotePage extends Page {
 		// SWEEP AND MOP
 		if( !isset($_POST['surfaces']) ) {
 			$this->surfacesError = 'error 4';
-			$totalErrors++;
+			$this->totalErrors++;
 		} else {
 			// Save the data selected by the user
 			$this->surfaces = $_POST['surfaces'];
@@ -97,37 +120,43 @@ class MainQuotePage extends Page {
 		// TOILET
 		if( !isset($_POST['toilet-radio']) ) {
 			$this->toiletError = 'error 6';
-			$totalErrors++;
+			$this->totalErrors++;
 		} else {
 			// Save the data selected by the user
-			$this->toilet = $_POST['toilet-radio'];
+			$this->toiletNum = $_POST['toilet-radio'];
 		}
 
 		// SHOWER
 		if( !isset($_POST['shower-radio']) ) {
 			$this->showerError = 'error 7';
-			$totalErrors++;
+			$this->totalErrors++;
 		} else {
 			// Save the data selected by the user
-			$this->shower = $_POST['shower-radio'];
+			$this->showerNum = $_POST['shower-radio'];
 		}
 
 		// SUPPLY CONSUMABLES
-		if( !isset($_POST['supply-consumables']) ) {
+		if( !isset($_POST['consumables']) ) {
 			$this->supplyConsumablesError = 'Supply Consumables Error';
-			$totalErrors++;
+			$this->totalErrors++;
 		} else {
 			// Save the data selected by the user
-			$this->supplyConsumables = $_POST['supply-consumables'];
+			$this->supplyConsumables = $_POST['consumables'];
 		}
 
 		// CLEANING CUPBOARD
-		// STILL TO DO
+		if( !isset($_POST['springClean']) ) {
+			$this->cleanCupboardError = 'error 7';
+			$this->totalErrors++;
+		} else {
+			// Save the data selected by the user
+			$this->cleanCupboard = $_POST['springClean'];
+		}
 
 		// SPRING CLEAN
 		if( !isset($_POST['springClean']) ) {
 			$this->springCleanError = 'error 7';
-			$totalErrors++;
+			$this->totalErrors++;
 		} else {
 			// Save the data selected by the user
 			$this->springClean = $_POST['springClean'];
@@ -136,7 +165,7 @@ class MainQuotePage extends Page {
 		// SPRING CLEAN MONTHS
 		if( !isset($_POST['how-many-months']) ) {
 			$this->springCleanMonthsError = 'error 7';
-			$totalErrors++;
+			$this->totalErrors++;
 		} else {
 			// Save the data selected by the user
 			$this->springCleanMonths = $_POST['how-many-months'];
@@ -145,7 +174,7 @@ class MainQuotePage extends Page {
 		// PARKING
 		if( !isset($_POST['parking']) ) {
 			$this->parkingError = 'Error for parking';
-			$totalErrors++;
+			$this->totalErrors++;
 		} else {
 			// Save the data selected by the user
 			$this->parking = $_POST['parking'];
@@ -155,7 +184,9 @@ class MainQuotePage extends Page {
 		if($this->totalErrors == 0) {
 
 		// Pass the variables to this function to capture the data
-		//$message = file_get_contents();
+		$message = file_get_contents('./templates/onlineQuote.php');
+
+		die($message);
 		
 		// 	$data = $this->model->getUserInfo();
 				
