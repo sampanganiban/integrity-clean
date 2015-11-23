@@ -387,8 +387,28 @@ ul.banner-social-buttons {
   #main-quote-form .form-div {
     margin:2em;
     width:310px;
-    height:330px;
+    height:310px;
     float:left;
+  }
+
+  #main-quote-form .form-div h3 {
+    margin-bottom: .5em;
+  }
+
+  #main-quote-form .form-div h4 {
+    text-align: left;
+  }
+
+  #main-quote-form #dusting, #main-quote-form #vacuum-cleaning, #main-quote-form #cupboard, #main-quote-form #glass, #main-quote-form #parking {
+    height:180px;
+  }
+
+  #main-quote-form #cupboard {
+    height:150px;
+  }
+    
+  #main-quote-form #glass {
+    height:100px;
   }
 
   #main-quote-form .form-div h3 {

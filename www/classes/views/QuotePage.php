@@ -6,7 +6,6 @@ class QuotePage extends Page {
 	private $name;
 	private $company;
 	private $email;
-
 	private $nameError;
 	private $emailError;
 	private $companyError;

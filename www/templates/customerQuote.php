@@ -1,13 +1,3 @@
- 
-
-<?php
-	
-	
-
-
-
-?>
-
 <h1>Your Online Quote</h1>
 <div id="facility-details" class="form-div">
 	<h3>Facility Details and Staff:</h3>
