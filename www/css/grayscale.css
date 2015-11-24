@@ -414,6 +414,14 @@ ul.banner-social-buttons {
   #main-quote-form .form-div h3 {
     text-align:left;
   }
+
+  #main-quote-form #bathroom-area {
+    height:270px;
+  }
+
+  #main-quote-form #glass {
+    margin-top:3.5em;
+  }
   
   #book-quote, #contact-number {
     display:none;

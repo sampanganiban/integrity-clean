@@ -28,7 +28,7 @@ class AccountPage extends Page {
 		include 'templates/account.php';
 		
 		// If user is an admin
-		if( isset($_SESSION['privilege']) == 'admin' ) {
+		if( isset($_SESSION['privilege']) === 'admin' ) {
 			include 'templates/admin.php';
 		}
 

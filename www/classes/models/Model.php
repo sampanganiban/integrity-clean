@@ -19,7 +19,7 @@ class Model {
 	public function getPageInfo() {
 
 		// Obtain the name of the requested page
-		$requestedPage = $_GET['page'];
+		$requestedPage = $this->filter($_GET['page']);
 
 		// Prepare the query
 		$sql = "SELECT title, description FROM pages WHERE name = '$requestedPage'";
@@ -35,11 +35,6 @@ class Model {
 		$this->description = $pageData['description'];
 	}
 
-	// Filter the inputs and values
-	protected function filter( $value ) {
-		return $this->dbc->real_escape_string( $value );
-	}
-
 	// Methods for logging in
 	public function attemptLogin() {
 
@@ -51,7 +46,7 @@ class Model {
 		$username = $this->dbc->real_escape_string( $username );
 
 		// Prepare SQL to find a user and get the hashed password
-		$sql = "SELECT id, password, privilege FROM users WHERE username = '$username' ";
+		$sql = "SELECT id, username, email, password, privilege FROM users WHERE username = '$username' ";
 
 		// Run the SQL
 		$result = $this->dbc->query($sql);
@@ -80,5 +75,10 @@ class Model {
 
 		}
 
+	}
+
+	// Filter the inputs and values
+		protected function filter( $value ) {
+		return $this->dbc->real_escape_string( $value );
 	}
 }

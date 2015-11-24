@@ -7,7 +7,7 @@
 
 	        <form action="index.php?page=main-quote" method="post" id="main-quote-form" class="clearfix">
         		<div id="facility-details" class="form-div">
-	        		<h3>Facility Details and Staff:</h3>
+	        		<h3>Number of Staff and Facility Details:</h3>
 	        		<div class="radio">
 	        			<label>
 	        				<input type="radio" name="staffNumber" value="1-5" <?php if (isset($_POST['staffNumber']) and $_POST['staffNumber'] == '1-5') echo ' checked'; ?>>
@@ -121,7 +121,7 @@
 	        	<h3>Vacuum Cleaning and/or Power Sweeping:</h3>
 	        		<div class="checkbox">
 	        			<label>
-	        				<input type="checkbox">
+	        				<input type="checkbox" name="all-carpeted-areas" id="all-carpeted-areas" value="All Carpeted Areas">
 	        				All Carpeted Areas
 	        			</label>
 	        		</div>
@@ -196,7 +196,7 @@
 	        		</div>
 					<div class="form-group">
 						<label for="other-requirements">Other Requirements:</label>
-						<textarea name="carpet-textarea" id="cafeteria-textarea" cols="30" rows="2"></textarea>
+						<textarea name="cafeteria-textarea" id="cafeteria-textarea" cols="30" rows="2"></textarea>
 					</div>
 					<?php echo $this->bootstrapAlert($this->cafeteriaError, 'danger') ?>
 	        	</div>
@@ -219,8 +219,8 @@
 	        				<input type="radio" name="toilet-radio" value="Once a Week" <?php if (isset($_POST['toilet-radio']) and $_POST['toilet-radio'] == 'Once a Week') echo ' checked'; ?>>
 	        				Once a Week
 	        			</label>
+	        			<?php echo $this->bootstrapAlert($this->toiletError, 'danger') ?>
 	        		</div>
-	        		<?php echo $this->bootstrapAlert($this->toiletError, 'danger') ?>
 	        		<h4>Showers:</h4>
 	        		<div class="form-group">
 	        			<label>How many?</label>
@@ -237,7 +237,6 @@
 	        				<input type="radio" name="shower-radio" value="Once a Week" <?php if (isset($_POST['shower-radio']) and $_POST['shower-radio'] == 'Once a Week') echo ' checked'; ?>>
 	        				Once a Week
 	        			</label>
-	        			<?php echo $this->bootstrapAlert($this->showerError, 'danger') ?>
 	        		</div>
 	        	</div>
 
@@ -378,8 +377,8 @@
         			<div class="form-group">
 						<label for="other-requirements">Other Requirements:</label>
 						<textarea name="carpet-textarea" id="cafeteria-textarea" cols="30" rows="2"></textarea>
+						<?php echo $this->bootstrapAlert($this->springCleanMonthsError, 'danger') ?>
 					</div>
-					<?php echo $this->bootstrapAlert($this->springCleanMonthsError, 'danger') ?>
 	        	</div>
 
 	        	<div id="parking" class="form-div">
@@ -406,7 +405,7 @@
                 </div>
 
 	        	<div>
-	        		<input type="submit" name="get-main-quote" value="Get Quick Quote" class="btn">	
+	        		<input type="submit" name="get-main-quote" value="Get Quick Quote" class="btn">
 	        	</div>
 				
 	        </form>

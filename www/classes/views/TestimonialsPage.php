@@ -38,7 +38,7 @@ class TestimonialsPage extends Page {
 		if( isset($_SESSION['privilege']) && $_SESSION['privilege'] == 'admin' ) {
 
 			// If the admin has submitted the deleting order button
-			if( isset($_POST['review-delete']) ) {
+			if( isset($_POST['delete-review']) ) {
 				$this->processDeleteReview();
 			}
 

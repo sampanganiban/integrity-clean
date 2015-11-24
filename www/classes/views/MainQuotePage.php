@@ -10,12 +10,14 @@ class MainQuotePage extends Page {
 	// Properties for Online Quote form
 	private $staffNumError;
 	private $staffNumber;
+	private $area;
 	
 	private $daysOfWeekError;
 	private $daysOfWeek;
 
 	private $dustingError;
 	private $dusting;
+	private $dustingExtra;
 
 	private $cafeteriaError;
 	private $cafeteria;
@@ -23,11 +25,18 @@ class MainQuotePage extends Page {
 	private $surfacesError;
 	private $surfaces;
 
+	private $cafeteriaExtra;
+
 	private $toiletError;
+	private $toiletTime;
 	private $toiletNum;
 
 	private $showerError;
+	private $showerCalls;
 	private $showerNum;
+
+	private $allCarpetedAreas;
+	private $carpetExtra;
 
 	private $cleanCupboardError;
 	private $cleanCupboard;
@@ -67,49 +76,70 @@ class MainQuotePage extends Page {
 
 	public function processQuickQuote() {
 
-		// VALIDATION 
+		// VALIDATION
 
 		// FACILITY DETAILS AND STAFF
 		
 		// If the user has not selected a number of staff
 		if( !isset($_POST['staffNumber']) ) {
-			$this->staffNumError = 'Please select the amount of staff members in your facility.';
+			$this->staffNumError = 'Please provide staff and area details.';
 			$this->totalErrors++;
 		} else {
 			// Save the number of staff selected by the user
 			$this->staffNumber = $_POST['staffNumber'];
 		}
 
+		// Save area info
+		$this->area = $_POST['area-in-metres'];
+
 		// DAYS OF CALLING SERVICE
 		if( !isset($_POST['daysOfWeek']) ) {
-			$this->daysOfWeekError = 'error 2';
+			$this->daysOfWeekError = 'Please select the days for Service Calls.';
 			$this->totalErrors++;
 		} else {
 			// Save the data selected by the user
 			$this->daysOfWeek = $_POST['daysOfWeek'];
+			foreach ($this->daysOfWeek as $days) {
+				echo '<p>'.$days.'<p>';
+			}
 		}
 
 		// DUSTING
 		if( !isset($_POST['dusting']) ) {
-			$this->dustingError = 'error 3';
+			$this->dustingError = 'Please an option for Dusting.';
 			$this->totalErrors++;
 		} else {
 			// Save the data selected by the user
 			$this->dusting = $_POST['dusting'];
 		}
 
+		// DUSTING TEXTAREA
+		$this->dustingExtra = $_POST['dusting-textarea'];
+
+		// VACUUM CLEANING
+		if( isset($_POST['all-carpeted-areas']) ) {
+			$this->allCarpetedAreas = $_POST['all-carpeted-areas'];
+		} else {
+			$this->allCarpetedAreas = '';
+		}
+
+		$this->carpetExtra = $_POST['carpet-textarea'];
+
 		// CAFETERIA
 		if( !isset($_POST['cafeteria']) ) {
-			$this->cafeteriaError = 'error 5';
+			$this->cafeteriaError = 'Please select your options for the Cafeteria.';
 			$this->totalErrors++;
 		} else {
 			// Save the data selected by the user
 			$this->cafeteria = $_POST['cafeteria'];
 		}
 
+		// CAFETERIA TEXTAREA
+		$this->cafeteriaExtra = $_POST['carpet-textarea'];
+
 		// SWEEP AND MOP
 		if( !isset($_POST['surfaces']) ) {
-			$this->surfacesError = 'error 4';
+			$this->surfacesError = 'Please select a Surface.';
 			$this->totalErrors++;
 		} else {
 			// Save the data selected by the user
@@ -119,25 +149,28 @@ class MainQuotePage extends Page {
 		// Bathrooms
 		// TOILET
 		if( !isset($_POST['toilet-radio']) ) {
-			$this->toiletError = 'error 6';
+			$this->toiletError = 'Please add all details for toilets.';
 			$this->totalErrors++;
 		} else {
 			// Save the data selected by the user
-			$this->toiletNum = $_POST['toilet-radio'];
+			$this->toiletTime = $_POST['toilet-radio'];
 		}
 
-		// SHOWER
-		if( !isset($_POST['shower-radio']) ) {
-			$this->showerError = 'error 7';
-			$this->totalErrors++;
+		// Save toilet and shower number
+		$this->toiletNum = $_POST['toilets'];
+		$this->showerNum = $_POST['showers'];
+
+
+		if(isset($_POST['shower-radio'])) {
+			$this->showerCalls = $_POST['shower-radio'];
 		} else {
-			// Save the data selected by the user
-			$this->showerNum = $_POST['shower-radio'];
+			$this->showerCalls = '';
 		}
+		
 
 		// SUPPLY CONSUMABLES
 		if( !isset($_POST['consumables']) ) {
-			$this->supplyConsumablesError = 'Supply Consumables Error';
+			$this->supplyConsumablesError = 'Please provide options for your Supply Consumables.';
 			$this->totalErrors++;
 		} else {
 			// Save the data selected by the user
@@ -145,26 +178,29 @@ class MainQuotePage extends Page {
 		}
 
 		// CLEANING CUPBOARD
-		if( !isset($_POST['springClean']) ) {
-			$this->cleanCupboardError = 'error 7';
+		if( !isset($_POST['cleaning-cupboard']) ) {
+			$this->cleanCupboardError = 'Please select Yes or No if your Cleaning Cupboard is available';
 			$this->totalErrors++;
 		} else {
 			// Save the data selected by the user
-			$this->cleanCupboard = $_POST['springClean'];
+			$this->cleanCupboard = $_POST['cleaning-cupboard'];
 		}
 
 		// SPRING CLEAN
 		if( !isset($_POST['springClean']) ) {
-			$this->springCleanError = 'error 7';
+			$this->springCleanError = 'Please provide options for Spring Cleaning.';
 			$this->totalErrors++;
 		} else {
 			// Save the data selected by the user
 			$this->springClean = $_POST['springClean'];
-		}
+			foreach ($this->springClean as $springCleanOptions) {
+				echo '<p>'.$springCleanOptions.'</p>';
+				}
+			}
 
 		// SPRING CLEAN MONTHS
 		if( !isset($_POST['how-many-months']) ) {
-			$this->springCleanMonthsError = 'error 7';
+			$this->springCleanMonthsError = 'Please select how often you want us to call.';
 			$this->totalErrors++;
 		} else {
 			// Save the data selected by the user
@@ -173,49 +209,33 @@ class MainQuotePage extends Page {
 		
 		// PARKING
 		if( !isset($_POST['parking']) ) {
-			$this->parkingError = 'Error for parking';
+			$this->parkingError = 'Please select details on parking.';
 			$this->totalErrors++;
 		} else {
 			// Save the data selected by the user
 			$this->parking = $_POST['parking'];
 		}
 
-		// // If passed validation get the users info from the database
+		// $data = ['staffNumber' => $this->staffNumber, 'areaInMetres' => $this->area];
+		// die($data);
+
+		// If passed validation get the users info from the database
 		if($this->totalErrors == 0) {
-
-		// Pass the variables to this function to capture the data
-		$message = file_get_contents('./templates/onlineQuote.php');
-
-		die($message);
-		
-		// 	$data = $this->model->getUserInfo();
-				
-		// 	// Insert the customer info from the database into mailgun to send an email
+			// $data = $this->model->getUserInfo();
+			// $message = file_get_contents('./templates/onlineQuote.php');
 			
-		// 	// Instantiate the client
-		// 	$mgClient = new Mailgun('key-a5d6c43600911540c7ff4033f03e4f38');
-		// 	$domain = "sandboxfcac969b25074c6f969079a248e252c4.mailgun.org";
+			// // Instantiate the client
+			// $mgClient = new Mailgun('key-a5d6c43600911540c7ff4033f03e4f38');
+			// $domain = "sandboxfcac969b25074c6f969079a248e252c4.mailgun.org";
 
-		// 	// Send to user
-		// 	$result = $mgClient->sendMessage($domain, array(
-		// 	    'from'    => 'Integrity Clean <mailgun@sandboxfcac969b25074c6f969079a248e252c4.mailgun.org>',
-		// 	    'to'      => $_SESSION['email'],
-		// 	    'subject' => 'Thank you for getting an online quote with us, we will contact you for further details',
-		// 	    'text'    => ''
-		// 	));
+			// // Send to user
+			// $result = $mgClient->sendMessage($domain, array(
+			//     'from'    => 'Integrity Clean <mailgun@sandboxfcac969b25074c6f969079a248e252c4.mailgun.org>',
+			//     'to'      => $_SESSION['email'],
+			//     'subject' => 'Thank you for getting an online quote with us, we will contact you for further details',
+			//     'text'    => $message
+			// ));
 		}
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-
+	}	
 }
+

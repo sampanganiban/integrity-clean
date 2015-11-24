@@ -24,9 +24,7 @@ class TestimonialsModel extends Model {
 	}
 
 	public function getAllReviews() {
-
-			return $this->dbc->query("SELECT id, name, comment, time_review_added FROM reviews");
-
+		return $this->dbc->query("SELECT id, name, comment, time_review_added FROM reviews");
 	}
 
 	public function deleteReview() {
