@@ -5,7 +5,7 @@
 	        <p>This online proposal is to give you a general idea of the cost of our services. We will need to arrange a time to visit you to confirm this and other details.</p>
 	        <hr>
 
-	        <form action="index.php?page=main-quote" method="post" id="main-quote-form" class="clearfix">
+	        <form action="index.php?page=main-quote" method="post" enctype="multipart/form-data" id="main-quote-form" class="clearfix">
         		<div id="facility-details" class="form-div">
 	        		<h3>Number of Staff and Facility Details:</h3>
 	        		<div class="radio">

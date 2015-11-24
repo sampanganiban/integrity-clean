@@ -1,37 +1,20 @@
-<?php
-	
-	// Get variables from the quote page
-	$this->staffNumber;
-	$this->area;
-	$this->daysOfWeek;
-	$this->dusting;
-	$this->dustingExtra;
-	$this->cafeteria;
-	$this->surfaces;
-	$this->cafeteriaExtra;
-	$this->toiletTime;
-	$this->toiletNum;
-	$this->showerCalls;
-	$this->showerNum;
-	$this->allCarpetedAreas;
-	$this->carpetExtra;
-	$this->cleanCupboard;
-	$this->supplyConsumables;
-	$this->springClean;
-	$this->springCleanMonths;
-	$this->parking;
+<h1>Your Online Quote</h1>
+<p>Thanks for filling out our online quote form.</p>
 
-?>
+<h3>Facility Details and Staff:</h3>
+<p>Number of Staff: 1-5 </p>
+<p>Area approximately in metres squared: 200 m²</p>
 
-Your Online Quote
-Thanks for filling out our online quote form.
+<h3>Days of Service Calls (Per Week):</h3>
+<p>Monday, Tuesday</p>
 
-Facility Details and Staff:
-Number of Staff: <?php echo $this->staffNumber; ?>
-Area approximately in metres squared: <?php echo $this->area; ?> m2
+<h3>Dusting (Dust all flat surfaces):</h3>
+<p>Once a Week</p>
+<p>Other Requirements: Did not provide dusting requirements</p>
 
+<h3>Vacuum Cleaning and/or Power Sweeping:</h3>
 
-
-
-
-
+<?php if(isset($_POST['all-carpeted-areas'])): ?>
+	<?php echo :?> <p>All Carpeted Areas</p>
+</endif;?>
+<p>Other Requirements: Did not provide carpet areas requirements</p>
