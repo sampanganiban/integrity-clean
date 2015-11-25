@@ -21,11 +21,11 @@ class MainQuotePage extends Page {
 
 	private $cafeteriaError;
 	private $cafeteria;
+	private $cafeteriaExtra;
 	
 	private $surfacesError;
 	private $surfaces;
-
-	private $cafeteriaExtra;
+	private $outsideEntranceWay;
 
 	private $toiletError;
 	private $toiletTime;
@@ -70,6 +70,7 @@ class MainQuotePage extends Page {
 
 		// If the registration form has been submitted
 		if( isset( $_POST['get-main-quote'] ) ) {
+
 			$this->processQuickQuote();
 		}
 	}
@@ -80,17 +81,17 @@ class MainQuotePage extends Page {
 
 		// FACILITY DETAILS AND STAFF
 		
-		// // If the user has not selected a number of staff
-		// if( !isset($_POST['staffNumber']) ) {
-		// 	$this->staffNumError = 'Please provide staff and area details.';
-		// 	$this->totalErrors++;
-		// } else {
-		// 	// Save the number of staff selected by the user
-		// 	$this->staffNumber = $_POST['staffNumber'];
-		// }
+		// If the user has not selected a number of staff
+		if( !isset($_POST['staffNumber']) ) {
+			$this->staffNumError = 'Please provide staff and area details.';
+			$this->totalErrors++;
+		} else {
+			// Save the number of staff selected by the user
+			$this->staffNumber = $_POST['staffNumber'];
+		}
 
-		// // Save area info
-		// $this->area = $_POST['area-in-metres'];
+		// Save area info
+		$this->area = $_POST['area-in-metres'];
 
 		// DAYS OF CALLING SERVICE
 		if( !isset($_POST['daysOfWeek']) ) {
@@ -99,79 +100,81 @@ class MainQuotePage extends Page {
 		} else {
 			// Save the data selected by the user
 			$this->daysOfWeek = $_POST['daysOfWeek'];
-
 			foreach ($this->daysOfWeek as $days) {
-				print_r('<p>'.$days.'</p>');
+				echo $days;
 			}
-
 		}
 
-		// // DUSTING
-		// if( !isset($_POST['dusting']) ) {
-		// 	$this->dustingError = 'Please an option for Dusting.';
-		// 	$this->totalErrors++;
-		// } else {
-		// 	// Save the data selected by the user
-		// 	$this->dusting = $_POST['dusting'];
-		// }
+		// DUSTING
+		if( !isset($_POST['dusting']) ) {
+			$this->dustingError = 'Please an option for Dusting.';
+			$this->totalErrors++;
+		} else {
+			// Save the data selected by the user
+			$this->dusting = $_POST['dusting'];
+		}
 
-		// // DUSTING TEXTAREA
-		// $this->dustingExtra = $_POST['dusting-textarea'];
+		// DUSTING TEXTAREA
+		$this->dustingExtra = $_POST['dusting-textarea'];
 
-		// // VACUUM CLEANING
-		// if( isset($_POST['all-carpeted-areas']) ) {
-		// 	$this->allCarpetedAreas = $_POST['all-carpeted-areas'];
-		// } else {
-		// 	$this->allCarpetedAreas = '';
-		// }
+		// VACUUM CLEANING
+		if( isset($_POST['all-carpeted-areas']) ) {
+			$this->allCarpetedAreas = $_POST['all-carpeted-areas'];
+		} else {
+			$this->allCarpetedAreas = '';
+		}
 
-		// if(isset($_POST['carpet-textarea'])) {
-		// 	$this->carpetExtra = $_POST['carpet-textarea'];
-		// } else {
-		// 	$this->carpetExtra = '';
-		// }
+		// Save carpet textarea
+		$this->carpetExtra = $_POST['carpet-textarea'];
 
-		// // CAFETERIA
-		// if( !isset($_POST['cafeteria']) ) {
-		// 	$this->cafeteriaError = 'Please select your options for the Cafeteria.';
-		// 	$this->totalErrors++;
-		// } else {
-		// 	// Save the data selected by the user
-		// 	$this->cafeteria = $_POST['cafeteria'];
-		// }
+		// CAFETERIA
+		if( !isset($_POST['cafeteria']) ) {
+			$this->cafeteriaError = 'Please select your options for the Cafeteria.';
+			$this->totalErrors++;
+		} else {
+			// Save the data selected by the user
+			$this->cafeteria = $_POST['cafeteria'];
 
-		// // CAFETERIA TEXTAREA
-		// $this->cafeteriaExtra = $_POST['carpet-textarea'];
+			foreach($this->cafeteria as $cafOptions) {
+				echo $cafOptions;
+			}
+		}
 
-		// // SWEEP AND MOP
-		// if( !isset($_POST['surfaces']) ) {
-		// 	$this->surfacesError = 'Please select a Surface.';
-		// 	$this->totalErrors++;
-		// } else {
-		// 	// Save the data selected by the user
-		// 	$this->surfaces = $_POST['surfaces'];
-		// }
+		// CAFETERIA TEXTAREA
+		$this->cafeteriaExtra = $_POST['cafeteria-textarea'];
 
-		// // Bathrooms
-		// // TOILET
-		// if( !isset($_POST['toilet-radio']) ) {
-		// 	$this->toiletError = 'Please add all details for toilets.';
-		// 	$this->totalErrors++;
-		// } else {
-		// 	// Save the data selected by the user
-		// 	$this->toiletTime = $_POST['toilet-radio'];
-		// }
+		// SWEEP AND MOP
+		if( !isset($_POST['surfaces']) ) {
+			$this->surfacesError = 'Please select a Surface.';
+			$this->totalErrors++;
+		} else {
+			// Save the data selected by the user
+			$this->surfaces = $_POST['surfaces'];
+		}
 
-		// // Save toilet and shower number
-		// $this->toiletNum = $_POST['toilets'];
-		// $this->showerNum = $_POST['showers'];
+		// Save data for Outside Entrance Way
+		$this->outsideEntranceWay = $_POST['outside-entrance-way'];
+
+		// Bathrooms
+		// TOILET
+		if( !isset($_POST['toilet-radio']) ) {
+			$this->toiletError = 'Please add all details for toilets.';
+			$this->totalErrors++;
+		} else {
+			// Save the data selected by the user
+			$this->toiletTime = $_POST['toilet-radio'];
+		}
+
+		// Save toilet and shower number
+		$this->toiletNum = $_POST['toilets'];
+		$this->showerNum = $_POST['showers'];
 
 
-		// if(isset($_POST['shower-radio'])) {
-		// 	$this->showerCalls = $_POST['shower-radio'];
-		// } else {
-		// 	$this->showerCalls = '';
-		// }
+		if(isset($_POST['shower-radio'])) {
+			$this->showerCalls = $_POST['shower-radio'];
+		} else {
+			$this->showerCalls = '';
+		}
 		
 
 		// // SUPPLY CONSUMABLES
@@ -223,56 +226,71 @@ class MainQuotePage extends Page {
 		// }
 
 		// If passed validation get the users info from the database
-		// if($this->totalErrors == 0) {
-			// $data = $this->model->getUserInfo();
-			// $message = file_get_contents('./templates/onlineQuote.php');
+		if($this->totalErrors == 0) {
+		// 	$data = $this->model->getUserInfo();
+		// 	$message = file_get_contents('./templates/onlineQuote.php');
 			
-			// // Instantiate the client
-			// $mgClient = new Mailgun('key-a5d6c43600911540c7ff4033f03e4f38');
-			// $domain = "sandboxfcac969b25074c6f969079a248e252c4.mailgun.org";
+		// 	// Instantiate the client
+		// 	$mgClient = new Mailgun('key-a5d6c43600911540c7ff4033f03e4f38');
+		// 	$domain = "sandboxfcac969b25074c6f969079a248e252c4.mailgun.org";
 
-			// // Send to user
-			// $result = $mgClient->sendMessage($domain, array(
-			//     'from'    => 'Integrity Clean <mailgun@sandboxfcac969b25074c6f969079a248e252c4.mailgun.org>',
-			//     'to'      => $_SESSION['email'],
-			//     'subject' => 'Thank you for getting an online quote with us, we will contact you for further details',
-			//     'text'    => $message
-			// ));
+		// 	// Send to user
+		// 	$result = $mgClient->sendMessage($domain, array(
+		// 	    'from'    => 'Integrity Clean <mailgun@sandboxfcac969b25074c6f969079a248e252c4.mailgun.org>',
+		// 	    'to'      => $_SESSION['email'],
+		// 	    'subject' => 'Thank you for getting an online quote with us, we will contact you for further details',
+		// 	    'text'    => $message
+		// 	));
 		// }
 
-		// $message = file_get_contents('./templates/onlineQuote.php');
+		$template = file_get_contents('./templates/onlineQuote.php');
 
-		echo '<pre>';
-		print_r($this->daysOfWeek);
-		echo '</pre>';
+		// Process the daysOfWeek
+		$daysOfWeek = '';
+		echo '<ul>';foreach( $this->daysOfWeek as $day ) {
+			$daysOfWeek .= '<li>'.$day.'</li>';
+		} echo '</ul>';
 
-		// $template = file_get_contents('./templates/onlineQuote.php');
-		// $values = 
-		// 	array(
-		// 			'1-5' => $this->staffNumber, 
-		// 			'200' => $this->area,
-		// 			'Monday, Tuesday' => $this->daysOfWeek,
-		// 			'Once a Week' => $this->dusting,
-		// 			'Other Requirements: Did not provide dusting requirements' => $this->dustingExtra,
-		// 			'All Carpeted Areas' => $this->allCarpetedAreas,
-		// 			'Other Requirements: Did not provide carpet areas requirements' => $this->carpetExtra
-		// 		);
+		// Process the cafeteriaOptions
+		$cafeteriaOptions = '';
+		echo '<ul>';foreach($this->cafeteria as $option) {
+			$cafeteriaOptions .= '<li>'.$option.'</li>';
+		}echo '</ul>';
 
-		// $message = str_replace(array_keys($values), array_values($values), $template);
+		$values = 
+			array(
+					'1-5' => $this->staffNumber, 
+					'DID NOT PROVIDE METRES' => $this->area,
+					'Monday' => $daysOfWeek,
+					'Once a Week' => $this->dusting,
+					'Other Requirements: DID NOT PROVIDE DUSTING REQUIREMENTS' => $this->dustingExtra,
+					'All Carpeted Areas' => $this->allCarpetedAreas,
+					'Other Requirements: DID NOT PROVIDE CARPET REQUIREMENTS' => $this->carpetExtra,
+					'Vinyl' => $this->surfaces,
+					'Outside Entrance Way' => $this->outsideEntranceWay,
+					'Collect Cups/Glasses from desks' => $cafeteriaOptions,
+					'Other Requirements: DID NOT PROVIDE CAFETERIA REQUIREMENTS' => $this->cafeteriaExtra,
+					'8' => $this->toiletNum,
+					'Every Call' => $this->toiletTime,
+					'4' => $this->showerNum,
+					'Clean Showers on Every Call' => $this->showerCalls,
+				);
 
-		// die($message);
+		$message = str_replace(array_keys($values), array_values($values), $template);
 
-		// // Instantiate the client
-		// $mgClient = new Mailgun('key-a5d6c43600911540c7ff4033f03e4f38');
-		// $domain = "sandboxfcac969b25074c6f969079a248e252c4.mailgun.org";
+		die($message);
 
-		// // Send to user
-		// $result = $mgClient->sendMessage($domain, array(
-		//     'from'    => 'Integrity Clean <mailgun@sandboxfcac969b25074c6f969079a248e252c4.mailgun.org>',
-		//     'to'      => $_SESSION['email'],
-		//     'subject' => 'Thank you for getting an online quote with us, we will contact you for further details',
-		//     'text'    => $message
-		// ));
+		// Instantiate the client
+		$mgClient = new Mailgun('key-a5d6c43600911540c7ff4033f03e4f38');
+		$domain = "sandboxfcac969b25074c6f969079a248e252c4.mailgun.org";
+
+		// Send to user
+		$result = $mgClient->sendMessage($domain, array(
+		    'from'    => 'Integrity Clean <mailgun@sandboxfcac969b25074c6f969079a248e252c4.mailgun.org>',
+		    'to'      => $_SESSION['email'],
+		    'subject' => 'Thank you for getting an online quote with us, we will contact you for further details',
+		    'text'    => $message
+		));
 
 	}	
 }
@@ -300,3 +318,4 @@ class MainQuotePage extends Page {
 
 
 
+}

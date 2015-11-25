@@ -5,7 +5,7 @@
 	        <p>This online proposal is to give you a general idea of the cost of our services. We will need to arrange a time to visit you to confirm this and other details.</p>
 	        <hr>
 
-	        <form action="index.php?page=main-quote" method="post" enctype="multipart/form-data" id="main-quote-form" class="clearfix">
+	        <form action="index.php?page=main-quote" method="post" id="main-quote-form" class="clearfix">
         		<div id="facility-details" class="form-div">
 	        		<h3>Number of Staff and Facility Details:</h3>
 	        		<div class="radio">
@@ -111,7 +111,7 @@
 					  </label>
 					</div>
 					<div class="form-group">
-						<label for="other-requirements">Other Requirements:</label>
+						<label for="dusting-textarea">Other Requirements:</label>
 						<textarea name="dusting-textarea" id="dusting-textarea" cols="30" rows="2"></textarea>
 					</div>
 					<?php echo $this->bootstrapAlert($this->dustingError, 'danger') ?>
@@ -121,12 +121,12 @@
 	        	<h3>Vacuum Cleaning and/or Power Sweeping:</h3>
 	        		<div class="checkbox">
 	        			<label>
-	        				<input type="checkbox" name="all-carpeted-areas" id="all-carpeted-areas" value="All Carpeted Areas">
+	        				<input type="checkbox" name="all-carpeted-areas" id="all-carpeted-areas" value="All Carpeted Areas" <?php if (isset($_POST['all-carpeted-areas']) and $_POST['all-carpeted-areas'] == 'All Carpeted Areas') echo ' checked'; ?>>
 	        				All Carpeted Areas
 	        			</label>
 	        		</div>
 	        		<div class="form-group">
-						<label for="other-requirements">Other Requirements:</label>
+						<label for="carpet-textarea">Other Requirements:</label>
 						<textarea name="carpet-textarea" id="carpet-textarea" cols="30" rows="2"></textarea>
 					</div>
 	        	</div>
@@ -163,7 +163,7 @@
 	        		</div>
 	        		<div class="checkbox">
 	        			<label>
-	        				<input type="checkbox">
+	        				<input type="checkbox" name="outside-entrance-way" <?php if (isset($_POST['outside-entrance-way']) and $_POST['outside-entrance-way'] == 'Outside Entrance Way') echo ' checked'; ?>>
 	        				Outside Entrance Way
 	        			</label>
 	        		</div>
@@ -287,13 +287,13 @@
 	        		<h3>Glass:</h3>
 	        		<div class="checkbox">
 	        			<label>
-	        				<input type="checkbox">
+	        				<input type="checkbox" name="glass">
 	        				Spot clean glass doors
 	        			</label>
 	        		</div>
 	        		<div class="form-group">
 						<label for="other-requirements">Other Requirements:</label>
-						<textarea name="carpet-textarea" id="cafeteria-textarea" cols="30" rows="2"></textarea>
+						<textarea name="glass-textarea" id="glass-textarea" cols="30" rows="2"></textarea>
 					</div>
 	        	</div>
 
@@ -376,7 +376,7 @@
 	        		</div>
         			<div class="form-group">
 						<label for="other-requirements">Other Requirements:</label>
-						<textarea name="carpet-textarea" id="cafeteria-textarea" cols="30" rows="2"></textarea>
+						<textarea name="springClean-textarea" id="springClean-textarea" cols="30" rows="2"></textarea>
 						<?php echo $this->bootstrapAlert($this->springCleanMonthsError, 'danger') ?>
 					</div>
 	        	</div>
