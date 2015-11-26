@@ -75,8 +75,10 @@ class ContactPage extends Page {
 
 
 		// If there are no errors, then continue to place their order into the database
-		if( $this->totalErrors == 0 ) { 
-			// $result = $this->model->sendEnquiry();
+		if( $this->totalErrors == 0 ) {
+
+			$toAdminMessage = 
+			'Hello Integrity Clean, you recieved a message from '.$this->name.' - '.$this->email.'. Their message: '.$this->message;
 
 			// Instantiate the client
 			$mgClient = new Mailgun('key-a5d6c43600911540c7ff4033f03e4f38');
@@ -86,8 +88,8 @@ class ContactPage extends Page {
 			$result = $mgClient->sendMessage($domain, array(
 			    'from'    => 'Integrity Clean <mailgun@sandboxfcac969b25074c6f969079a248e252c4.mailgun.org>',
 			    'to'      => '<' . $this->email . '>',
-			    'subject' => 'Thank you for sending your enquiry to Integrity Clean',
-			    'text'    =>  'Your message to Integrity Clean :'.$this->message
+			    'subject' => 'You sent a customer enquiry to Integrity Clean',
+			    'text'    =>  'Your message: '.$this->message
 			));
 
 			// Send to admin
@@ -95,7 +97,7 @@ class ContactPage extends Page {
 			    'from'    => $this->name.' : '.$this->email.'<mailgun@sandboxfcac969b25074c6f969079a248e252c4.mailgun.org>',
 			    'to'      => '<samanthaisabelle.panganiban@gmail.com>',
 			    'subject' => 'Customer Enquiry',
-			    'text'    => 'Customer Enquiry: '.$this->message
+			    'text'    => $toAdminMessage
 			));
 
 			// If result is good then tell the user if their order was successful or not
