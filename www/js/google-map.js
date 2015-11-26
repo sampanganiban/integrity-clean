@@ -2,17 +2,17 @@ window.onload = function () {
 
   cleaningLocation();
 
-  userLocation();
+  // userLocation();
 
-  initialize();
+  // initialize();
 
 }
 
-var directionsDisplay;
-var directionsService = new google.maps.DirectionsService();
+// var directionsDisplay;
+// var directionsService = new google.maps.DirectionsService();
 var map;
-var hereIsTheUser;
-var hereIsTheCafe;
+// var hereIsTheUser;
+var hereAreTheCleaningLocations;
 
 function cleaningLocation() {
 
@@ -23,18 +23,16 @@ function cleaningLocation() {
   var cleaning = {
 
     title:"Cleaning Locations",
-    lat:-41.288799, 
-    lng:174.777213,
-    icon: ''
-   
-  
+    lat:-41.288784, 
+    lng:174.777223,
+    icon: 'img/cleaning-location-marker.jpg'
   }
 
   // Give the lat and lng to google so it can center on that info
   var centerPoint = new google.maps.LatLng(cleaning.lat, cleaning.lng);
 
-  // Save the location of the cafe
-  hereIsTheCafe = centerPoint;
+  // Save the location cleaning locations
+  hereAreTheCleaningLocations = centerPoint;
 
   var mapOptions = {
 
@@ -48,68 +46,67 @@ function cleaningLocation() {
   // Show the map
   map = new google.maps.Map(mapContainer, mapOptions);
 
-  var iconBase = 'img/map-marker.png';
+  var iconBase = 'img/cleaning-location-marker.png';
   var cleaningMarker = new google.maps.Marker({
 
     position:centerPoint,
     map:map,
-    icon:iconBase,
-    title:cafe.title
+    icon:iconBase
 
   });
 
 }
 
-function userLocation() {
+// function userLocation() {
 
-  if (navigator.geolocation) {
+//   if (navigator.geolocation) {
 
-    navigator.geolocation.getCurrentPosition(function(userLocation) {
+//     navigator.geolocation.getCurrentPosition(function(userLocation) {
 
-    console.log(userLocation);
+//     console.log(userLocation);
 
-    var latLng = new google.maps.LatLng (userLocation.coords.latitude, userLocation.coords.longitude);
+//     var latLng = new google.maps.LatLng (userLocation.coords.latitude, userLocation.coords.longitude);
 
-    // Save the location of the user
-    hereIsTheUser = latLng;
+//     // Save the location of the user
+//     hereIsTheUser = latLng;
 
-    var userMarker = new google.maps.Marker ({
-      position:latLng,
-      map: map,
-      icon: 'img/map-marker.png'
-    });
+//     var userMarker = new google.maps.Marker ({
+//       position:latLng,
+//       map: map,
+//       icon: 'img/cleaning-location-marker.png'
+//     });
 
-    userMarker.setAnimation(google.maps.Animation.DROP);
+//     userMarker.setAnimation(google.maps.Animation.DROP);
 
-    map.panTo(latLng);
+//     map.panTo(latLng);
 
-     calcRoute();
+//     calcRoute();
 
-    });
+//     });
 
-  }
+//   }
 
-}
+// }
 
-function initialize() {
- directionsDisplay = new google.maps.DirectionsRenderer();
- directionsDisplay.setMap(map);
-}
+// function initialize() {
+//  directionsDisplay = new google.maps.DirectionsRenderer();
+//  directionsDisplay.setMap(map);
+// }
 
 
 
-function calcRoute() {
-  var request = {
-      origin: hereIsTheUser,
-      destination: hereIsTheCafe,
-      travelMode: google.maps.TravelMode.WALKING
-  };
-  directionsService.route(request, function(response, status) {
-    if (status == google.maps.DirectionsStatus.OK) {
-      directionsDisplay.setDirections(response);
-    }
-  });
-}
+// function calcRoute() {
+//   var request = {
+//       origin: hereIsTheUser,
+//       destination: hereAreTheCleaningLocations,
+//       travelMode: google.maps.TravelMode.WALKING
+//   };
+//   directionsService.route(request, function(response, status) {
+//     if (status == google.maps.DirectionsStatus.OK) {
+//       directionsDisplay.setDirections(response);
+//     }
+//   });
+// }
 
 
 // CODE TO REMOVE THE DEFAULT ROUTE MARKERS

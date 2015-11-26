@@ -38,10 +38,10 @@
                 <h3><a href="index.php?page=register">REGISTER AN ACCOUNT</a></h3>
                 <h3>OR</h3>
                 <h3>Login to your account</h3>
-                <form action="index.php?page=<?php echo $_GET['page']; ?>" method="post">
+                <form action="index.php?page=<?php echo htmlentities($_GET['page']); ?>" method="post">
 
                   <div class="form-group">
-                    <input type="text" name="username" id="username" value="<?php echo $this->username; ?>" placeholder="username">
+                    <input type="text" name="username" id="username" value="<?php echo htmlentities($this->username); ?>" placeholder="username">
                     <?php $this->bootstrapAlert($this->usernameError, 'danger') ?>
                   </div>
 
@@ -67,27 +67,24 @@
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
-    <!-- Google Map -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
-
     <?php
-
-        // If the requested page is the home the header will animate if not then the animated header will turn off and just display the nav bar
-        if($_GET['page'] == 'home') : ?>
-          <script src="js/grayscale.js"></script>
-        <?php endif;
-
+      if($_GET['page'] == 'contact') : ?>
+      <!-- Google Map -->
+      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+      <script src="js/google-map.js"></script>
+    <?php endif; ?>
+    <?php
+      // If the requested page is the home the header will animate if not then the animated header will turn off and just display the nav bar
+      if($_GET['page'] == 'home') : ?>
+        <script src="js/grayscale.js"></script>
+      <?php endif;
     ?>
-
     <?php
-
       // If the requested page was the testimonials the slider will show up
-    if($_GET['page'] == 'testimonials') : ?>
-      <script src="js/slider.js"></script>
-    <?php endif;
-
+      if($_GET['page'] == 'testimonials') : ?>
+        <script src="js/slider.js"></script>
+      <?php endif;
     ?>
-
 </body>
 
 </html>
