@@ -7,7 +7,7 @@
             <h2>Being environmentally friendly</h2>
             <hr>
                 <div class="col-lg-6">
-                    <img src="./img/recycling-wellington.jpg" class="img-responsive" alt="">
+                    <img src="./img/recycling-wellington.gif" class="img-responsive" alt="Integrity Clean Recycles">
                 </div>
                 <div class="col-lg-6">
                     <h3>HYGIENE AND CLEANING PRODUCTS</h3>

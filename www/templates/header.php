@@ -76,13 +76,11 @@
             <header class="intro">
                 <div class="intro-body">
                     <div class="container">
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2">
-                            <img src="./img/logo/logo-no-text2.png" alt="">
-                                <img src="./img/logo/desktop-logo.png" alt="">
+                        <div class="row" id="logo-section">
+                            <div class="col-md-8 col-md-offset-2" id="header-img">
+                                <img src="./img/logo/logo-droplets.png" id="desktop-droplets"alt="Integrity Clean">
+                                <img src="./img/logo/logo-words.png" id="desktop-words" alt="Green and Blue droplets">
                                 <h1 id="intro-text">Our Name, Our Policy</h1>
-                                <!-- Make logo bigger -->
-                                <!-- <img src="./img/logo/logo-no-text2.png" alt=""> -->
                             </div>
                         </div>
                     </div>

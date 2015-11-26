@@ -22,14 +22,14 @@
     <section id="about-aaron" class="text-center">
         <div class="row">
             <div class="col-lg-4 col-lg-offset-2">
-                <h2><img src="./img/logo/logo-no-text.png" alt=""> About Aaron</h2>
+                <h2><img src="./img/logo/logo-no-text.png" alt="Green and Blue droplets"> About Aaron</h2>
                 <hr>
                 <p>Aaron started Integrity Clean as a form of part time employment, to enable him to be more involved in study and other pursuits. He soon became aware that there was a real need for honest commercial cleaners, who could use their initiative and consistently leave buildings clean and tidy. Aaron soon employed some of his family then eventually other staff.
                 </p>
                 <hr>
             </div>
             <div class="col-lg-4">
-                <img src="./img/aaron-cleaning.jpg" class="img-responsive" alt="" id="image-of-aaron">
+                <img src="./img/aaron-cleaning.jpg" class="img-responsive" alt="Image of Aaron and droplets logo" id="image-of-aaron">
             </div>
         </div>
     </section>
