@@ -54,8 +54,6 @@ ul {
 
 /* CODE FOR SLIDER  */
 
-@import url(http://meyerweb.com/eric/tools/css/reset/reset.css);
-
 div.wrapper {
     position: relative;
 }
@@ -65,7 +63,7 @@ article.slider {
   margin: 0 auto;
   position: relative;
   text-align: center;
-  width: 800px;
+  width: 100%;
 }
 
 article.slider section {
@@ -76,37 +74,38 @@ article.slider section {
 }
 
 article.slider section:first-child {
-    background: #29aae1 url(../img/slider/slider.jpg) center;
+  background: #29aae1 url(../img/slider/slider.jpg) center;
 }
 
 article.slider section:nth-child(2) {
-    background: #673090 url(../img/slider/img2.png) center;
+  background: #673090 url(../img/slider/img2.png) center;
 }
 
 article.slider section:nth-child(3) {
-    background: #6ebe35 url(../img/slider/img3.png) center;
+  background: #6ebe35 url(../img/slider/img3.png) center;
 }
 
 article.slider section:nth-child(4) {
-    background: #e0a32a url(../img/slider/img4.png) center;
+  background: #e0a32a url(../img/slider/img4.png) center;
 }
 
 article.slider section:last-child {
-    background: #c0c0c0 url(../img/slider/img5.png) center;
+  background: #c0c0c0 url(../img/slider/img5.png) center;
 }
 
 p.next, p.prev {
-    color: #6db220;
-    cursor: pointer;
-    font: 20px 'HelveticaNeue-Thin', 'Helvetica Neue', Helvetica, sans-serif;
-    font-weight: 600;
-    position: absolute;
-    top: 45%;
-    z-index: 999;
+  color: #6db220;
+  height:500px;
+  cursor: pointer;
+  font: 20px 'HelveticaNeue-Thin', 'Helvetica Neue', Helvetica, sans-serif;
+  font-weight: 600;
+  position: absolute;
+  top: 45%;
+  z-index: 999;
 }
 
 p.next:hover, p.prev:hover {
-    color: #00aae3;
+  color: #00aae3;
 }
 
 p.next {

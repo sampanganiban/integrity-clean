@@ -42,7 +42,7 @@ body {
 
 #review-results {
   background-color:rgba(49,168,224,0.3);
-  width:500px;
+  width:100%;
   padding:1.5em;
   margin:.5em;
   float:left;
@@ -53,7 +53,7 @@ body {
 }
 
 #review-results #time-of-review em {
-  margin-left:25em;
+  margin-left:90em;
 }
 
 #change-password-form .form-group {

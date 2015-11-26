@@ -101,9 +101,9 @@ class TestimonialsPage extends Page {
 		$result = $this->model->deleteReview();
 
 		if($result) {
-			$this->deleteReviewSuccess = 'The order you have selected has been deleted';
+			$this->deleteReviewSuccess = 'The review you have selected has been deleted';
 		} else {
-			$this->deleteReviewFail = 'The order has not been deleted';
+			$this->deleteReviewFail = 'The review has not been deleted';
 		}
 
 	}

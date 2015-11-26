@@ -38,7 +38,7 @@
                 <h3><a href="index.php?page=register">REGISTER AN ACCOUNT</a></h3>
                 <h3>OR</h3>
                 <h3>Login to your account</h3>
-                <form action="index.php?page=<?php echo htmlentities($_GET['page']); ?>" method="post">
+                <form action="index.php?page=<?php echo $_GET['page']; ?>" method="post">
 
                   <div class="form-group">
                     <input type="text" name="username" id="username" value="<?php echo htmlentities($this->username); ?>" placeholder="username">
