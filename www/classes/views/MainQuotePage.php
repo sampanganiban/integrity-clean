@@ -8,6 +8,9 @@ class MainQuotePage extends Page {
 	private $totalErrors = 0;
 
 	// Properties for Online Quote form
+	private $quoteSuccess;
+	private $quoteFail;
+
 	private $staffNumError;
 	private $staffNumber;
 	private $area;
@@ -351,6 +354,22 @@ class MainQuotePage extends Page {
 		    'subject' => 'Thank you for getting an online quote with us, we will contact you for further details',
 		    'text'    => $message
 		));
+
+		// Send to Admin
+		$result = $mgClient->sendMessage($domain, array(
+		    'from'    => $_SESSION['name'].' - '.$_SESSION['email'].' <mailgun@sandboxfcac969b25074c6f969079a248e252c4.mailgun.org>',
+		    'to'      => 'samanthaisabelle.panganiban@gmail.com'
+		    'subject' => 'You have been sent a message from'.$_SESSION['name'],
+		    'text'    => $message
+		));
+
+		// Once the message has been sent
+		if( $result ) {
+			$this->quoteSuccess = 'Thank you for getting your quick online Quote, we will contact you as soon as possible for confirmation.';
+		} else {
+			$this->quoteFail = 'Sorry, something went wrong when sending your online Quote, please try in a few minutes.';
+		}
+
 
 	}	
 }

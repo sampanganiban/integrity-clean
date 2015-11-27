@@ -407,7 +407,8 @@
 	        	<div>
 	        		<input type="submit" name="get-main-quote" value="Get Quick Quote" class="btn">
 	        	</div>
-				
+				<?php echo $this->bootstrapAlert($this->quoteSuccess, 'success') ?>
+				<?php echo $this->bootstrapAlert($this->quoteFail, 'danger') ?>
 	        </form>
 		</div>
 	        <hr>
