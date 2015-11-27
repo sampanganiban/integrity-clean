@@ -478,6 +478,10 @@ ul.banner-social-buttons {
   #main-quote-form #glass {
     margin-top:3.5em;
   }
+
+  #main-quote-form #cupboard {
+    padding-top:4em;
+  }
   
   #book-quote, #contact-number {
     display:none;

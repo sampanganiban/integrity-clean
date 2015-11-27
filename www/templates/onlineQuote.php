@@ -13,17 +13,13 @@
 <p>Other Requirements: DID NOT PROVIDE DUSTING REQUIREMENTS</p>
 
 <h3>Vacuum Cleaning and/or Power Sweeping:</h3>
-<?php if(isset($_POST['all-carpeted-areas'])): ?>
-	<?php echo :?> <p>All Carpeted Areas</p>
-</endif;?>
+<p>All Carpeted Areas</p>
 <p>Other Requirements: DID NOT PROVIDE CARPET REQUIREMENTS</p>
 
 <h3>Sweep and Mop:</h3>
 <h4>All hard surface floors: </h4>
 <p>Vinyl</p>
-<?php if(isset($_POST['outside-entrance-way'])): ?>
-	<?php echo :?> <p>Outside Entrance Way</p>
-</endif;?>
+<p>Outside Entrance Way</p>
 
 <h3>Clean the Cafeteria:</h3>
 <h4>Dishes</h4>
@@ -36,12 +32,9 @@
 <p>How many: 8</p>
 <p>Every Call</p>
 
-<?php if(isset($_POST['shower-radio'])) : ?>
-	<?php echo :?> 	
-	<h4>Showers</h4>
-	<p>How many: 4</p>
-	<p>Clean Shower Every Call</p>
-</endif;?>
+<h4>Showers</h4>
+<p>How many: NOT PROVIDED</p>
+<p>Clean Shower: NOT PROVIDED</p>
 
 <h3>Supply Consumables</h3>
 <p>Toilet Paper</p>
@@ -49,23 +42,21 @@
 <h4>Use Green Products</h4>
 <p>Where Possible</p>
 
-<?php if(isset($_POST['glass'])) :?>
-	<?php echo : ?> 
-	<h3>Glass</h3>
-	<p>Spot Clean Glass Doors</p>
-</endif;?>
+<h3>Glass</h3>
+<p>Glass: NOT PROVIDED</p>
 <p>Other Requirements: DID NOT PROVIDE GLASS REQUIREMENTS</p>
 
+<h3>Cleaning Cupboard</h3>
+<p>Yes it is available!</p>
 
+<h3>Spring Clean</h3>
+<p>Clean Refrigerator Interior</p>
+<h4>How Many Months?</h4>
+<p>Every 3 Months</p>
+<p>Other Requirements: DID NOT PROVIDE SPRING CLEAN REQUIREMENTS</p>
 
+<h3>Parking</h3>
+<p>Building has a Car Park</p>
 
-
-
-
-
-
-
-
-
-
-
+<h3>Sincerely,</h3>
+<h3>Integrity Clean</h3>

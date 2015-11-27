@@ -163,7 +163,7 @@
 	        		</div>
 	        		<div class="checkbox">
 	        			<label>
-	        				<input type="checkbox" name="outside-entrance-way" <?php if (isset($_POST['outside-entrance-way']) and $_POST['outside-entrance-way'] == 'Outside Entrance Way') echo ' checked'; ?>>
+	        				<input type="checkbox" name="outside-entrance-way" value="Outside Entrance Way">
 	        				Outside Entrance Way
 	        			</label>
 	        		</div>
@@ -219,8 +219,8 @@
 	        				<input type="radio" name="toilet-radio" value="Once a Week" <?php if (isset($_POST['toilet-radio']) and $_POST['toilet-radio'] == 'Once a Week') echo ' checked'; ?>>
 	        				Once a Week
 	        			</label>
-	        			<?php echo $this->bootstrapAlert($this->toiletError, 'danger') ?>
 	        		</div>
+	        		<?php echo $this->bootstrapAlert($this->toiletError, 'danger') ?>
 	        		<h4>Showers:</h4>
 	        		<div class="form-group">
 	        			<label>How many?</label>
@@ -244,29 +244,29 @@
 	        		<h3>Supply Consumables: </h3>
 	        		<div class="checkbox">
 	        			<label>
-	        				<input type="checkbox" name="consumables" value="Toilet Paper">
+	        				<input type="checkbox" name="consumables[]" value="Toilet Paper">
 	        				Toilet Paper
 	        			</label>	
 	        		</div>
 	        		<div class="checkbox">
 	        			<label>
-	        				<input type="checkbox" name="consumables" value="Paper Towels">
+	        				<input type="checkbox" name="consumables[]" value="Paper Towels">
 	        				Paper Towels
 	        			</label>	
 	        		</div>
 	        		<div class="checkbox">
 	        			<label>
-	        				<input type="checkbox" name="consumables" value="Rubbish Bags">
+	        				<input type="checkbox" name="consumables[]" value="Rubbish Bags">
 	        				Rubbish Bags
 	        			</label>
 	        		</div>
 	        		<div class="checkbox">
 	        			<label>
-	        				<input type="checkbox" name="consumables" value="Cleaning Chemicals">
+	        				<input type="checkbox" name="consumables[]" value="Cleaning Chemicals">
 	        				Cleaning Chemicals
 	        			</label>	
 	        		</div>
-
+					<?php echo $this->bootstrapAlert($this->supplyConsumablesError, 'danger') ?>
 	        		<h4>Use Green Products</h4>
 	        		<div class="radio">
 	        			<label>
@@ -280,14 +280,14 @@
 	        				Only
 	        			</label>
 	        		</div>
-	        		<?php echo $this->bootstrapAlert($this->supplyConsumablesError, 'danger') ?>
+	        		<?php echo $this->bootstrapAlert($this->greenProductsError, 'danger') ?>
 	        	</div>
 
 	        	<div id="glass" class="form-div">
 	        		<h3>Glass:</h3>
 	        		<div class="checkbox">
 	        			<label>
-	        				<input type="checkbox" name="glass">
+	        				<input type="checkbox" name="glass" value="Spot Clean Glass Doors">
 	        				Spot clean glass doors
 	        			</label>
 	        		</div>
@@ -383,27 +383,27 @@
 
 	        	<div id="parking" class="form-div">
                     <h3>Parking:</h3>
-                    <div class="checkbox">
+                    <div class="radio">
                         <label>
-                            <input type="checkbox" name="parking[]" value="Building has a Car Park">
+                            <input type="radio" name="parking" value="Building has a Car Park">
                             Building has a Car Park
                         </label>
                     </div>
-                    <div class="checkbox">
+                    <div class="radio">
                         <label>
-                            <input type="checkbox" name="parking[]" value="No Parking Near By">
+                            <input type="radio" name="parking" value="No Parking Near By">
                             No Parking Near By
                         </label>
                     </div>
-                    <div class="checkbox">
+                    <div class="radio">
                         <label>
-                            <input type="checkbox" name="parking[]" value="Loading Zone Outside Building">
+                            <input type="radio" name="parking" value="Loading Zone Outside Building">
                             Loading Zone Outside Building
                         </label>
                     </div>
-                    <?php echo $this->bootstrapAlert($this->parkingError, 'danger') ?>
+                  <?php echo $this->bootstrapAlert($this->parkingError, 'danger') ?>  
                 </div>
-
+				
 	        	<div>
 	        		<input type="submit" name="get-main-quote" value="Get Quick Quote" class="btn">
 	        	</div>
