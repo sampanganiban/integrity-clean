@@ -1,121 +1,46 @@
 window.onload = function () {
-
-  cleaningLocation();
-
-  // userLocation();
-
-  // initialize();
-
+  cleaningLocations();
 }
 
-// var directionsDisplay;
-// var directionsService = new google.maps.DirectionsService();
-var map;
-// var hereIsTheUser;
-var hereAreTheCleaningLocations;
+function cleaningLocations() {
 
-function cleaningLocation() {
-
-  // Find the map container
+  // Find the container for this map
   var mapContainer = document.getElementById('cleaning-location');
 
-  // Store the info about the Cleaning Locations in a JS object
-  var cleaning = {
-
-    title:"Cleaning Locations",
-    lat:-41.288784, 
-    lng:174.777223,
-    icon: 'img/cleaning-location-marker.jpg'
-  }
-
-  // Give the lat and lng to google so it can center on that info
-  var centerPoint = new google.maps.LatLng(cleaning.lat, cleaning.lng);
-
-  // Save the location cleaning locations
-  hereAreTheCleaningLocations = centerPoint;
-
+  // Options for the map
   var mapOptions = {
-
-    center:centerPoint,
-    zoom:17,
+    center: new google.maps.LatLng( -41.172768, 174.893247),
+    zoom: 10,
     scrollwheel: false,
     mapTypeControl:false,
     streetViewControl:false
   }
 
-  // Show the map
-  map = new google.maps.Map(mapContainer, mapOptions);
+  // Create the map
+  var theMap = new google.maps.Map( mapContainer, mapOptions );
 
-  var iconBase = 'img/cleaning-location-marker.png';
-  var cleaningMarker = new google.maps.Marker({
+  // Collection of location data for Islands around Wellington
+  var locations = [
+    ['Wellington Cleaning Location', -41.288784, 174.777223],
+    ['Petone Cleaning Location', -41.225289, 174.871759],
+    ['Whitby Cleaning Location', -41.116965, 174.893242]
+  ];
 
-    position:centerPoint,
-    map:map,
-    icon:iconBase
+  // Loop through each of the locations in the collection and display a marker
+  for( var i=0; i<locations.length; i++ ) {
 
-  });
+    // Grab the array containing info about an cleaning location
+    var cleaning = locations[i];
 
-}
+    // Place the marker
+    var marker = new google.maps.Marker( {
+      position: new google.maps.LatLng( cleaning[1], cleaning[2] ),
+      map: theMap,
+      icon: 'img/cleaning-location-marker.png'
+    } );
 
-// function userLocation() {
-
-//   if (navigator.geolocation) {
-
-//     navigator.geolocation.getCurrentPosition(function(userLocation) {
-
-//     console.log(userLocation);
-
-//     var latLng = new google.maps.LatLng (userLocation.coords.latitude, userLocation.coords.longitude);
-
-//     // Save the location of the user
-//     hereIsTheUser = latLng;
-
-//     var userMarker = new google.maps.Marker ({
-//       position:latLng,
-//       map: map,
-//       icon: 'img/cleaning-location-marker.png'
-//     });
-
-//     userMarker.setAnimation(google.maps.Animation.DROP);
-
-//     map.panTo(latLng);
-
-//     calcRoute();
-
-//     });
-
-//   }
-
-// }
-
-// function initialize() {
-//  directionsDisplay = new google.maps.DirectionsRenderer();
-//  directionsDisplay.setMap(map);
-// }
-
-
-
-// function calcRoute() {
-//   var request = {
-//       origin: hereIsTheUser,
-//       destination: hereAreTheCleaningLocations,
-//       travelMode: google.maps.TravelMode.WALKING
-//   };
-//   directionsService.route(request, function(response, status) {
-//     if (status == google.maps.DirectionsStatus.OK) {
-//       directionsDisplay.setDirections(response);
-//     }
-//   });
-// }
-
-
-// CODE TO REMOVE THE DEFAULT ROUTE MARKERS
-// https://developers.google.com/maps/documentation/javascript/reference#DirectionsRendererOptions
-
-
-
-
-
+  }
+};
 
 
 

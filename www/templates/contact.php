@@ -41,14 +41,13 @@
         </div>
         <hr>
         <h2 class="text-center">Locations</h2>
-        <p class="text-center">The marked areas are the places we work</p>
+        <p class="text-center">The marked areas are the common places we work</p>
         <hr>
     </section>
 
 
     <!-- Map Section -->
-    
-    <div id="cleaning-location"></div>    
+    <div id="cleaning-location"></div>
     
 
 
