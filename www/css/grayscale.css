@@ -5,8 +5,23 @@ body {
   color: #333;
 }
 
+#call a, #quote a{
+  width:50%;
+  float:left;
+  padding:1em;
+  text-align: center;
+}
+
+#call a {
+  background-color: #6db220;  
+}
+
+#quote a {
+  background-color: #00aae3;
+}
+
 #welcome {
-  margin-top: 4em;
+  margin-top: 7em;
 }
 
 #book-quote {
@@ -53,7 +68,7 @@ body {
 }
 
 #review-results #time-of-review em {
-  margin-left:90em;
+  /*margin-left:90em;*/
 }
 
 #change-password-form .form-group {
@@ -202,9 +217,7 @@ h6 {
 }
 #cleaning-location {
   margin:2em;
-  /*width: 100%;*/
   height: 300px;
-  border:1px solid #f09;
 }
 
 #quote-form .form-group {
@@ -369,7 +382,83 @@ ul.banner-social-buttons {
   background-color: #333;
 }
 
+div.wrapper {
+    position: relative;
+}
+
+#slider-section {
+  height:400px;
+}
+
+
+article.slider {
+  height: 500px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+article.slider section {
+  display: block;
+  display: none;
+  height:220px;
+  /*width: 800px;*/
+}
+
+article.slider section:first-child {
+  background: #29aae1 url(../img/slider/carpark-cleaning-wellington.jpg) center;
+  background-size:100%;
+}
+
+article.slider section:nth-child(2) {
+  background: #673090 url(../img/slider/wellington-carpark.jpg) center;
+  background-size:100%;
+}
+
+article.slider section:nth-child(3) {
+  background: #6ebe35 url(../img/slider/wellington-sweeping.jpg) center;
+  background-size:100%;
+}
+
+article.slider section:nth-child(4) {
+  background: #e0a32a url(../img/slider/wgtn-carpark-sweeping.jpg) center;
+  background-size:100%;
+}
+
+article.slider section:last-child {
+  background: #c0c0c0 url(../img/slider/cleaning-services-wellington.jpg) center;
+  background-size:100%;
+}
+
+p.next, p.prev {
+  color: #6db220;
+  height:500px;
+  cursor: pointer;
+  font: 20px 'HelveticaNeue-Thin', 'Helvetica Neue', Helvetica, sans-serif;
+  font-weight: 600;
+  position: absolute;
+  top: 45%;
+  z-index: 999;
+}
+
+p.next:hover, p.prev:hover {
+  color: #00aae3;
+}
+
+p.next {
+  right: 100px;
+}
+
+p.prev {
+  left: 100px;
+}
+
 @media (min-width: 480px) {
+
+  #call a, #quote a{
+    display:none;
+  }
 
   #desktop-droplets {
     width:120px;
@@ -406,6 +495,25 @@ ul.banner-social-buttons {
 }
 
 @media (min-width: 768px) {
+
+  #about-aaron-paragraph {
+    width:50%;
+    float:left;
+  }
+
+  #about-aaron-image {
+    width:50%;
+    float:left;
+  }
+
+
+  #slider-section {
+    height:700px;
+  }
+
+  article.slider section {
+    height:550px;
+  }
 
   #desktop-droplets {
     width:226px;
@@ -548,15 +656,91 @@ ul.banner-social-buttons {
   #contact-form {
     width:50%;
     float:left;
-    /*border:1px solid #f09;*/
   }
 
   #contact-details {
     width:50%;
     float:left;
-    /*border:1px solid #f09;*/
   }
 
+}
+
+@media (min-width:1024px) {
+  
+  #slider-section {
+    height:800px;
+  }
+
+  article.slider section {
+    width:70%;
+    height:650px;
+  }
+
+    article.slider section:first-child {
+    background: #29aae1 url(../img/slider/carpark-cleaning-wellington.jpg) center;
+    background-size:100%;
+  }
+
+  article.slider section:nth-child(2) {
+    background: #673090 url(../img/slider/wellington-carpark.jpg) center;
+    background-size:100%;
+  }
+
+  article.slider section:nth-child(3) {
+    background: #6ebe35 url(../img/slider/wellington-sweeping.jpg) center;
+    background-size:100%;
+  }
+
+  article.slider section:nth-child(4) {
+    background: #e0a32a url(../img/slider/wgtn-carpark-sweeping.jpg) center;
+    background-size:100%;
+  }
+
+  article.slider section:last-child {
+    background: #c0c0c0 url(../img/slider/cleaning-services-wellington.jpg) center;
+    background-size:100%;
+  }
+
+  #hygiene-image {
+    width:50%;
+    float:left;
+  }
+
+  #hygiene-paragraph {
+    float:left;
+    width:50%;
+  }
+  
+  #floor-waxing-image {
+    width:40%;
+    float:left;
+    height:350px;
+  }
+  
+  #floor-waxing-paragraph {
+    width:60%;
+    float:left;
+  }
+
+  #car-sweeping-image {
+    width:40%;
+    float:left;
+  }
+  
+  #car-sweeping-paragraph {
+    width:60%;
+    float:left;
+  }
+
+  #about-aaron-paragraph {
+    float:left;
+    width:700px;
+  }
+
+  #about-aaron-image {
+    float:left;
+    width:500px;
+  }
 }
 
 @media (min-width:1200px) {

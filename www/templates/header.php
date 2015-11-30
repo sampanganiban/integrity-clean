@@ -68,7 +68,11 @@
                 </ul>
             </div>
         </div>
+        <span id="call"><a href="#"><i class="fa fa-phone"></i> CALL NOW</a></span>
+        <span id="quote"><a href="index.php?page=quote"><i class="fa fa-book"></i> QUICK QUOTE</a></span>
     </nav>
+        
+    
 
     <!-- Intro Header -->
     <?php
