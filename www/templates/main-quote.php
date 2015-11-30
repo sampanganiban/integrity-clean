@@ -6,6 +6,8 @@
 	        <hr>
 
 	        <form action="index.php?page=main-quote" method="post" id="main-quote-form" class="clearfix">
+	        	<?php echo $this->bootstrapAlert($this->quoteSuccess, 'success') ?>
+				<?php echo $this->bootstrapAlert($this->quoteFail, 'danger') ?>
         		<div id="facility-details" class="form-div">
 	        		<h3>Number of Staff and Facility Details:</h3>
 	        		<div class="radio">
@@ -407,8 +409,6 @@
 	        	<div>
 	        		<input type="submit" name="get-main-quote" value="Get Quick Quote" class="btn">
 	        	</div>
-				<?php echo $this->bootstrapAlert($this->quoteSuccess, 'success') ?>
-				<?php echo $this->bootstrapAlert($this->quoteFail, 'danger') ?>
 	        </form>
 		</div>
 	        <hr>
