@@ -112,7 +112,7 @@ class MainQuotePage extends Page {
 			// Save the data selected by the user
 			$this->daysOfWeek = $_POST['daysOfWeek'];
 			foreach ($this->daysOfWeek as $days) {
-				echo $days;
+				$days;
 			}
 		}
 
@@ -147,7 +147,7 @@ class MainQuotePage extends Page {
 			$this->cafeteria = $_POST['cafeteria'];
 
 			foreach($this->cafeteria as $cafOptions) {
-				echo $cafOptions;
+				$cafOptions;
 			}
 		}
 
@@ -208,7 +208,7 @@ class MainQuotePage extends Page {
 			$this->supplyConsumables = $_POST['consumables'];
 			// Loop through each intance and display them
 			foreach($this->supplyConsumables as $supply) {
-				echo $supply;
+				$supply;
 			}
 		}
 
@@ -252,7 +252,7 @@ class MainQuotePage extends Page {
 			// Save the data selected by the user
 			$this->springClean = $_POST['springClean'];
 			foreach ($this->springClean as $springOptions) {
-				echo $springOptions;
+				$springOptions;
 				}
 			}
 
@@ -285,30 +285,30 @@ class MainQuotePage extends Page {
 		if($this->totalErrors == 0) {
 		// Process the daysOfWeek
 		$daysOfWeek = '';
-		echo '<ul>';foreach( $this->daysOfWeek as $day ) {
-			$daysOfWeek .= '<li>'.$day.'</li>';
-		} echo '</ul>';
+		foreach( $this->daysOfWeek as $day ) {
+			$daysOfWeek .= $day.', ';
+		}
 
 		// Process the cafeteriaOptions
 		$cafeteriaOptions = '';
-		echo '<ul>';foreach($this->cafeteria as $option) {
-			$cafeteriaOptions .= '<li>'.$option.'</li>';
-		}echo '</ul>';
+		foreach($this->cafeteria as $option) {
+			$cafeteriaOptions .= $option.', ';
+		}
 
 		// Process the Supply Consumables
 		$supplyOptions = '';
-		echo '<ul>';foreach($this->supplyConsumables as $supplyOption) {
-			$supplyOptions .= '<li>'.$supplyOption.'</li>';
-		} echo '</ul>';
+		foreach($this->supplyConsumables as $supplyOption) {
+			$supplyOptions .= $supplyOption.', ';
+		}
 
 		// Process the spring clean options
 		$springCleanOptions = '';
-		echo '<ul>'; foreach ($this->springClean as $spring) {
-			$springCleanOptions .= '<li>'.$spring.'</li>';
+		foreach ($this->springClean as $spring) {
+			$springCleanOptions .= $spring.', ';
 		}
 		
 		// Grab contents from file and get the contents from it
-		$template = file_get_contents('./templates/onlineQuote.php');
+		$template = file_get_contents('./templates/onlineQuote.txt');
 
 		// Store values taken from form and add them prepare them for email message
 		$values = 
@@ -341,8 +341,6 @@ class MainQuotePage extends Page {
 
 		$message = str_replace(array_keys($values), array_values($values), $template);
 
-		// die($message);
-
 		// Instantiate the client
 		$mgClient = new Mailgun('key-a5d6c43600911540c7ff4033f03e4f38');
 		$domain = "sandboxfcac969b25074c6f969079a248e252c4.mailgun.org";
@@ -358,8 +356,8 @@ class MainQuotePage extends Page {
 		// Send to Admin
 		$result = $mgClient->sendMessage($domain, array(
 		    'from'    => $_SESSION['name'].' - '.$_SESSION['email'].' <mailgun@sandboxfcac969b25074c6f969079a248e252c4.mailgun.org>',
-		    'to'      => 'samanthaisabelle.panganiban@gmail.com'
-		    'subject' => 'You have been sent a message from'.$_SESSION['name'],
+		    'to'      => 'samanthaisabelle.panganiban@gmail.com',
+		    'subject' => 'You have been required an Online Quote from'.' '.$_SESSION['name'],
 		    'text'    => $message
 		));
 
